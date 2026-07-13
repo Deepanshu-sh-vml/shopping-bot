@@ -7,7 +7,7 @@ load_dotenv()
 
 def main():
     # You can access your API keys here if needed
-    # api_key = os.getenv("GEMINI_API_KEY")
+    api_key = os.getenv("GEMINI_API_KEY")
     
     print("Starting Shopping Bot Application...")
     agent = ShoppingAgent()
