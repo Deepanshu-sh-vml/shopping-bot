@@ -2,6 +2,7 @@
 
 We will build an intelligent shopping assistant chatbot that helps users find clothing, checks inventory via an MCP (Model Context Protocol) server, handles missing information by asking counter-questions, and provides options to add items to a cart and check out using a payment gateway.
 
+
 ## Goal Description
 Create a shopping bot application using the Agent Development Kit (ADK) and Python. The system will consist of:
 1. **Inventory MCP Server (Python)**: An MCP server that reads from a local inventory file (e.g., CSV or JSON) and exposes tools to query available clothing items (by type, size, color, etc.).

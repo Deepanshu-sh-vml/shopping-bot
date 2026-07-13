@@ -5,6 +5,7 @@ from mcp.server import Server
 from mcp.types import Tool, TextContent
 from typing import Any
 
+
 # Initialize the server
 app = Server("shopping-inventory")
 

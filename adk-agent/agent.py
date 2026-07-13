@@ -2,6 +2,7 @@ import json
 import os
 import sys
 
+
 # Mock ADK / Agent setup
 class ShoppingAgent:
     def __init__(self):
