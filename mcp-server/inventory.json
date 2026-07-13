@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Oxford Shirt",
+    "type": "shirt",
+    "color": "blue",
+    "size": "M",
+    "quality": "100% Premium Cotton",
+    "price": "$ 20",
+    "image_url": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500"
+  },
+  {
+    "id": 2,
+    "name": "Casual Black Tee",
+    "type": "shirt",
+    "color": "black",
+    "size": "L",
+    "quality": "Super-soft Polyester Blend",
+    "price": "$ 20.50",
+    "image_url": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500"
+  },
+  {
+    "id": 3,
+    "name": "Slim Fit Denim Jeans",
+    "type": "jeans",
+    "color": "blue",
+    "size": "32",
+    "quality": "Heavyweight Denim",
+    "price": "$ 16.49",
+    "image_url": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500"
+  },
+  {
+    "id": 4,
+    "name": "Heavyweight Hooded Sweatshirt",
+    "type": "hoodie",
+    "color": "grey",
+    "size": "XL",
+    "quality": "Fleece-lined Cotton",
+    "price": "$ 23.99",
+    "image_url": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500"
+  },
+  {
+    "id": 5,
+    "name": "Chino Trousers",
+    "type": "pants",
+    "color": "beige",
+    "size": "34",
+    "quality": "Stretch Twill Cotton",
+    "price": "$ 18.99",
+    "image_url": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=500"
+  },
+  {
+    "id": 6,
+    "name": "Leather Biker Jacket",
+    "type": "jacket",
+    "color": "black",
+    "size": "L",
+    "quality": "Genuine Lambskin Leather",
+    "price": "$ 29.59",
+    "image_url": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500"
+  },
+  {
+    "id": 7,
+    "name": "Summer Floral Dress",
+    "type": "dress",
+    "color": "yellow",
+    "size": "S",
+    "quality": "Lightweight Rayon",
+    "price": "$ 23.99",
+    "image_url": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500"
+  },
+  {
+    "id": 8,
+    "name": "Athletic Running Shorts",
+    "type": "shorts",
+    "color": "black",
+    "size": "M",
+    "quality": "Moisture-wicking Nylon",
+    "price": "$ 10.59",
+    "image_url": "https://images.unsplash.com/photo-1539185441755-769473a23570?w=500"
+  },
+  {
+    "id": 9,
+    "name": "Cable-knit Sweater",
+    "type": "sweater",
+    "color": "white",
+    "size": "M",
+    "quality": "100% Merino Wool",
+    "price": "$ 28.99",
+    "image_url": "https://images.unsplash.com/photo-1614975058789-41316d0e2e9c?w=500"
+  },
+  {
+    "id": 10,
+    "name": "Formal Blazer Jacket",
+    "type": "jacket",
+    "color": "navy",
+    "size": "40R",
+    "quality": "Tailored Wool Blend",
+    "price": "$ 34.99",
+    "image_url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500"
+  },
+  {
+    "id": 11,
+    "name": "Linen Beach Shirt",
+    "type": "shirt",
+    "color": "white",
+    "size": "L",
+    "quality": "Pure Organic Linen",
+    "price": "$ 17.50",
+    "image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=500"
+  },
+  {
+    "id": 12,
+    "name": "Cargo Utility Pants",
+    "type": "pants",
+    "color": "olive",
+    "size": "36",
+    "quality": "Ripstop Cotton",
+    "price": "$ 18.99",
+    "image_url": "https://images.unsplash.com/photo-1517423568366-8b83523034fd?w=500"
+  },
+  {
+    "id": 13,
+    "name": "Puffer Winter Coat",
+    "type": "jacket",
+    "color": "red",
+    "size": "XL",
+    "quality": "Water-resistant Down Fill",
+    "price": "$ 29.50",
+    "image_url": "https://images.unsplash.com/photo-1544923246-77307dd654cb?w=500"
+  },
+  {
+    "id": 14,
+    "name": "Flannel Plaid Shirt",
+    "type": "shirt",
+    "color": "red",
+    "size": "S",
+    "quality": "Brushed Heavy Cotton",
+    "price": "$ 20",
+    "image_url": "https://images.unsplash.com/photo-1559551345-2b9c51cbdfd2?w=500"
+  },
+  {
+    "id": 15,
+    "name": "Polo Golf Shirt",
+    "type": "shirt",
+    "color": "green",
+    "size": "M",
+    "quality": "Pique Cotton Knit",
+    "price": "$ 19",
+    "image_url": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=500"
+  },
+  {
+    "id": 16,
+    "name": "Activewear Leggings",
+    "type": "pants",
+    "color": "purple",
+    "size": "S",
+    "quality": "High-rise Spandex Blend",
+    "price": "$ 23.99",
+    "image_url": "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=500"
+  },
+  {
+    "id": 17,
+    "name": "Denim Skirt",
+    "type": "skirt",
+    "color": "blue",
+    "size": "28",
+    "quality": "Sturdy Wash Denim",
+    "price": "$ 19.99",
+    "image_url": "https://images.unsplash.com/photo-1582142306909-195724d33ab2?w=500"
+  },
+  {
+    "id": 18,
+    "name": "Unisex Tracksuit Pants",
+    "type": "pants",
+    "color": "black",
+    "size": "M",
+    "quality": "Soft Tri-blend Fleece",
+    "price": "$ 17.50",
+    "image_url": "https://images.unsplash.com/photo-1551854838-212c50b4c184?w=500"
+  },
+  {
+    "id": 19,
+    "name": "Windbreaker Wind Jacket",
+    "type": "jacket",
+    "color": "blue",
+    "size": "L",
+    "quality": "Lightweight Ripstop Nylon",
+    "price": "$ 24.99",
+    "image_url": "https://images.unsplash.com/photo-1548883354-7622d03aca27?w=500"
+  },
+  {
+    "id": 20,
+    "name": "Elegant Silk Blouse",
+    "type": "shirt",
+    "color": "pink",
+    "size": "S",
+    "quality": "100% Mulberry Silk",
+    "price": "$ 21.99",
+    "image_url": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=500"
+  },
+  {
+    "id": 21,
+    "name": "Corduroy Button-Up",
+    "type": "shirt",
+    "color": "brown",
+    "size": "XL",
+    "quality": "Fine Wale Corduroy",
+    "price": "$ 20",
+    "image_url": "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=500"
+  },
+  {
+    "id": 22,
+    "name": "Formal Pleated Trousers",
+    "type": "pants",
+    "color": "charcoal",
+    "size": "32",
+    "quality": "Polyester-Viscose Suit Fabric",
+    "price": "$ 19",
+    "image_url": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500"
+  },
+  {
+    "id": 23,
+    "name": "Cozy Knit Cardigan",
+    "type": "sweater",
+    "color": "beige",
+    "size": "L",
+    "quality": "Soft Acrylic & Wool Blend",
+    "price": "$ 16",
+    "image_url": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500"
+  },
+  {
+    "id": 24,
+    "name": "Classic Trench Coat",
+    "type": "jacket",
+    "color": "khaki",
+    "size": "M",
+    "quality": "Double-breasted Cotton Gabardine",
+    "price": "$ 40",
+    "image_url": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500"
+  },
+  {
+    "id": 25,
+    "name": "Graphic Streetwear Hoodie",
+    "type": "hoodie",
+    "color": "black",
+    "size": "XL",
+    "quality": "Heavy French Terry Cotton",
+    "price": "$ 18.99",
+    "image_url": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=500"
+  },
+  {
+    "id": 26,
+    "name": "Pleated A-Line Skirt",
+    "type": "skirt",
+    "color": "grey",
+    "size": "M",
+    "quality": "Sturdy Tartan Blend",
+    "price": "$ 14.50",
+    "image_url": "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=500"
+  },
+  {
+    "id": 27,
+    "name": "Sweat Shorts",
+    "type": "shorts",
+    "color": "grey",
+    "size": "L",
+    "quality": "Unbrushed Loopback Cotton",
+    "price": "$ 15",
+    "image_url": "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500"
+  },
+  {
+    "id": 28,
+    "name": "V-Neck Cashmere Jumper",
+    "type": "sweater",
+    "color": "black",
+    "size": "M",
+    "quality": "100% Pure Mongolian Cashmere",
+    "price": "$ 30.50",
+    "image_url": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500"
+  },
+  {
+    "id": 29,
+    "name": "Evening Maxi Dress",
+    "type": "dress",
+    "color": "red",
+    "size": "S",
+    "quality": "Satin Finish Polyester",
+    "price": "$ 35.99",
+    "image_url": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500"
+  },
+  {
+    "id": 30,
+    "name": "Denim Utility Jacket",
+    "type": "jacket",
+    "color": "blue",
+    "size": "L",
+    "quality": "Thick Selvedge Denim",
+    "price": "$ 25",
+    "image_url": "https://images.unsplash.com/photo-1611312449412-6cefac5dc3e4?w=500"
+  }
+]
