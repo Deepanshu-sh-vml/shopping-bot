@@ -1,2 +1,27 @@
 .env
 implementation_plan.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+.venv312/
+venv/
+env/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.adk/
+
+# Local editor/system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,20 +1,28 @@
 import json
 import os
-import mcp.server.stdio
+import sys
+from mcp.server.stdio import stdio_server
 from mcp.server import Server
 from mcp.types import Tool, TextContent
 from typing import Any
 
-
 # Initialize the server
 app = Server("shopping-inventory")
 
-# Load inventory data
-inventory_file = os.path.join(os.path.dirname(__file__), "inventory.json")
+# ---- FIX: force absolute path so it works when launched as a subprocess ----
+inventory_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "inventory.json")
+
+# Diagnostic to STDERR (does NOT corrupt the MCP stdout stream)
+print(f"[server.py] Looking for inventory at: {inventory_file}", file=sys.stderr, flush=True)
+print(f"[server.py] File exists: {os.path.exists(inventory_file)}", file=sys.stderr, flush=True)
+
 def load_inventory():
     if os.path.exists(inventory_file):
         with open(inventory_file, 'r') as f:
-            return json.load(f)
+            data = json.load(f)
+            print(f"[server.py] Loaded {len(data)} items from inventory.", file=sys.stderr, flush=True)
+            return data
+    print("[server.py] ERROR: inventory.json NOT FOUND.", file=sys.stderr, flush=True)
     return []
 
 @app.list_tools()
@@ -27,18 +35,9 @@ async def handle_list_tools() -> list[Tool]:
             inputSchema={
                 "type": "object",
                 "properties": {
-                    "item_type": {
-                        "type": "string",
-                        "description": "The type of clothing, e.g., 'shirt' or 'pants'."
-                    },
-                    "size": {
-                        "type": "string",
-                        "description": "The size of the clothing, e.g., 'small', 'medium', 'large'."
-                    },
-                    "color": {
-                        "type": "string",
-                        "description": "The color of the clothing, e.g., 'blue', 'red', 'black'."
-                    }
+                    "item_type": {"type": "string", "description": "The type of clothing, e.g., 'shirt' or 'pants'."},
+                    "size": {"type": "string", "description": "The size, e.g., 'small', 'medium', 'large'."},
+                    "color": {"type": "string", "description": "The color, e.g., 'blue', 'red', 'black'."}
                 },
                 "required": ["item_type", "size", "color"]
             }
@@ -50,22 +49,22 @@ async def handle_call_tool(name: str, arguments: dict[str, Any] | None) -> list[
     """Handle tool execution requests."""
     if name != "search_inventory":
         raise ValueError(f"Unknown tool: {name}")
-
     if not arguments:
         raise ValueError("Missing arguments")
 
-    item_type = arguments.get("item_type", "").lower()
-    size = arguments.get("size", "").lower()
-    color = arguments.get("color", "").lower()
+    item_type = arguments.get("item_type", "").lower().strip()
+    size = arguments.get("size", "").lower().strip()
+    color = arguments.get("color", "").lower().strip()
+
+    # Log what the agent actually sent
+    print(f"[server.py] Search called with: type={item_type}, size={size}, color={color}", file=sys.stderr, flush=True)
 
     inventory = load_inventory()
-    
-    # Filter inventory based on criteria
     matches = []
     for item in inventory:
-        if (item.get("type", "").lower() == item_type and 
-            item.get("size", "").lower() == size and 
-            item.get("color", "").lower() == color):
+        if (item.get("type", "").lower().strip() == item_type and
+            item.get("size", "").lower().strip() == size and
+            item.get("color", "").lower().strip() == color):
             matches.append(item)
 
     if not matches:
@@ -74,16 +73,11 @@ async def handle_call_tool(name: str, arguments: dict[str, Any] | None) -> list[
     result_text = "Found the following matching items in inventory:\n"
     for item in matches:
         result_text += f"- {item['name']} ({item['quality']} quality) - ${item['price']}\n"
-    
     return [TextContent(type="text", text=result_text)]
 
 async def main():
-    async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
-        await app.run(
-            read_stream,
-            write_stream,
-            app.create_initialization_options()
-        )
+    async with stdio_server() as (read_stream, write_stream):
+        await app.run(read_stream, write_stream, app.create_initialization_options())
 
 if __name__ == "__main__":
     import asyncio
