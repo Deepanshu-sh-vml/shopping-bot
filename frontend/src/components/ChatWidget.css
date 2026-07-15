@@ -5,7 +5,7 @@
   width: 380px;
   height: 600px;
   max-height: calc(100vh - 48px);
-  background: #ffffff;
+  background: #f5dddd;
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -14,9 +14,72 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
   animation: slideUp 0.25s ease;
 }
+
+.cart-panel {
+  border-bottom: 1px solid #d6acee;
+  background: #e2f7fd;
+  padding: 12px 14px;
+}
+
+.cart-panel-title {
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.cart-empty {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.cart-items {
+  display: grid;
+  gap: 8px;
+  max-height: 160px;
+  overflow: auto;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+}
+
+.cart-item-image {
+  width: 44px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #e2e8f0;
+}
+
+.cart-item-name {
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cart-item-meta {
+  color: #64748b;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Mobile: full screen */
@@ -29,4 +92,187 @@
     border-radius: 0;
     max-height: 100vh;
   }
+}
+
+/* Thumbnail styling */
+.product-thumbnail {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-thumbnail:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Lightbox Modal Overlay */
+.zoom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  /* Dim the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* ---- FIXES FOR ZOOM CLIPPING ---- */
+  z-index: 9999999 !important;
+  /* Force overlay on top of .chat-widget and the browser window */
+  position: fixed !important;
+  /* ---------------------------------- */
+
+  animation: fadeIn 0.2s ease-out;
+  cursor: zoom-out;
+}
+
+/* Image Wrapper */
+.zoom-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000000 !important;
+  /* Keep content stack on top of overlay */
+}
+
+/* Large Zoomed Image */
+.zoomed-image {
+  max-width: 90vw;
+  /* Keep image scalable on standard browser screens */
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+  animation: zoomIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Close Button (X) */
+.zoom-close-button {
+  position: absolute;
+  top: -45px;
+  right: 10px;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.15s ease;
+  user-select: none;
+}
+
+.zoom-close-button:hover {
+  color: #ff4d4d;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Cart Card alignment update */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  padding: 8px 12px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+/* Remove Button styling */
+.cart-item-remove-btn {
+  background: none;
+  border: none;
+  color: #aaaaaa;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin-left: auto;
+  /* Pushes the button to the absolute right side */
+  transition: color 0.15s ease, transform 0.1s ease;
+  line-height: 1;
+}
+
+.cart-item-remove-btn:hover {
+  color: #ff3333;
+  /* Turns red on hover */
+  transform: scale(1.15);
+}
+
+.cart-item-remove-btn:active {
+  transform: scale(0.95);
+}
+
+.cart-panel-footer {
+  padding: 12px 16px;
+  background-color: #dbf2fc;
+  border-top: 1px solid #eeeeee;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.cart-total-price {
+  color: #4f46e5;
+  /* Accent Indigo Color */
+  font-size: 16px;
+}
+
+/* Order Now Action Button */
+.cart-checkout-btn {
+  background-color: #4f46e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.cart-checkout-btn:hover {
+  background-color: #4338ca;
+}
+
+.cart-checkout-btn:active {
+  transform: scale(0.98);
 }

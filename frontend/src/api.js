@@ -55,11 +55,11 @@ export async function getCart() {
  * @param {number} quantity - Quantity to add
  * @returns {Promise<object>} Result of the add action
  */
-export async function addToCart(itemName, quantity = 1) {
+export async function addToCart(itemId, itemName, quantity = 1) {
   const res = await fetch(`${API_BASE}/cart/add`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ item_name: itemName, quantity: quantity }),
+    body: JSON.stringify({ item_id: itemId, item_name: itemName, quantity: quantity }),
   });
   if (!res.ok) {
     const error = await res.json();
@@ -84,5 +84,19 @@ export async function processPayment(amount) {
     const error = await res.json();
     throw new Error(error.detail || 'Payment gateway failed');
   }
+  return res.json();
+}
+
+/**
+ * Remove an item from the shopping cart by product ID.
+ * @param {number} itemId - Product ID
+ */
+export async function removeFromCart(itemId) {
+  const res = await fetch(`${API_BASE}/cart/remove`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ item_id: itemId }),
+  });
+  if (!res.ok) throw new Error('Failed to remove item from cart');
   return res.json();
 }

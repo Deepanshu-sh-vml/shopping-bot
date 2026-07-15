@@ -1,13 +1,17 @@
 # agent.py
 import os
 import sys
+from dotenv import load_dotenv
 from google.adk import Agent
+from google.adk.models.lite_llm import LiteLlm
 # 1. Import the toolset
 from google.adk.tools.mcp_tool.mcp_toolset import McpToolset
 # 2. Import the connection params from the session_manager submodule
 from google.adk.tools.mcp_tool.mcp_session_manager import StdioConnectionParams
 # 3. Import StdioServerParameters from the core 'mcp' library (NOT google.adk)
 from mcp import StdioServerParameters
+
+load_dotenv()
 
 # path to server.py
 mcp_server_path = os.path.abspath(
@@ -39,7 +43,12 @@ def process_payment(amount: float) -> str:
 # Define your agent as 'root_agent' so 'adk web' can auto-discover it
 root_agent = Agent(
     name="ShoppingBot",
-    model="gemini-2.5-flash",
+    # model="gemini-2.5-flash",
+    model=LiteLlm(
+        model=os.getenv("OPENROUTER_MODEL","openrouter/openai/gpt-4o-mini" ),
+        api_key=os.getenv("OPENROUTER_API_KEY"),
+        api_base=os.getenv("OPENROUTER_API_BASE", "https://openrouter.ai/api/v1"),
+    ),
     instruction="""
     You are a helpful clothing shopping assistant.
     Your job is to help users find clothes (like shirts, pants, hoodies).
@@ -52,4 +61,3 @@ root_agent = Agent(
     """,
     tools=[inventory_mcp, add_to_cart, process_payment]
 )
-

@@ -1,0 +1,221 @@
+/* PaymentPage.css */
+
+.payment-container {
+    position: fixed;
+    /* Takes over the entire window screen */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(243, 244, 246, 0.98);
+    /* Light clean overlay background */
+    z-index: 10000;
+    /* Floats above background */
+    padding: 20px;
+    box-sizing: border-box;
+    animation: fadeInModal 0.25s ease-out;
+}
+
+.payment-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+}
+
+.payment-order-summary {
+    background-color: #f9fafb;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #e5e7eb;
+}
+
+.summary-title {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333333;
+}
+
+.payment-summary-items {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.payment-summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #4b5563;
+    line-height: 1.4;
+}
+
+.payment-summary-divider {
+    height: 1px;
+    background-color: #e5e7eb;
+    margin: 12px 0;
+}
+
+.payment-summary-row.total-row {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.payment-summary-row.total-row strong {
+    color: #4f46e5;
+}
+
+.payment-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.payment-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.payment-input {
+    padding: 10px 14px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.payment-input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.payment-input.error-border {
+    border-color: #ff4d4d;
+}
+
+.payment-input.error-border:focus {
+    box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.15);
+}
+
+.payment-error-text {
+    color: #ff4d4d;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.payment-error-alert {
+    background-color: #fef2f2;
+    border: 1px solid #fee2e2;
+    color: #b91c1c;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.payment-button {
+    width: 100%;
+    padding: 12px;
+    color: #ffffff;
+    background-color: #4f46e5;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.payment-button:hover:not(:disabled) {
+    background-color: #4338ca;
+}
+
+.payment-button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.payment-button:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+}
+
+.payment-success-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #d1fae5;
+    color: #059669;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0 auto 20px auto;
+}
+
+/* Utilities */
+.flex-1 {
+    flex: 1;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+/* Animations */
+.animate-fade-in {
+    animation: fadeInModal 0.3s ease-out;
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

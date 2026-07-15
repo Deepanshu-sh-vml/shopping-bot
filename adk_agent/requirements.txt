@@ -1,3 +1,4 @@
+google-adk[extensions]
 google-genai
 mcp
 python-dotenv

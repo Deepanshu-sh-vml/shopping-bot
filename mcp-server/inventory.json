@@ -1,302 +1,1107 @@
 [
   {
-    "id": 1,
-    "name": "Classic Oxford Shirt",
-    "type": "shirt",
-    "color": "blue",
-    "size": "M",
-    "quality": "100% Premium Cotton",
-    "price": "$ 20",
-    "image_url": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500"
+    "productId": 11363560,
+    "productName": "Men Navy Blue & Maroon Striped Slim Fit Round Neck T-shirt",
+    "brand": "WROGN",
+    "category": "Tshirts",
+    "color": "Navy Blue",
+    "landingPageUrl": "tshirts/wrogn/wrogn-men-navy-blue--maroon-striped-slim-fit-round-neck-t-shirt/11363560/buy",
+    "price": 699,
+    "mrp": 1199,
+    "discount": 500,
+    "discountDisplayStr": "(41% OFF)",
+    "rating": 4.2,
+    "ratingCount": 1850,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_200,w_200,c_fill,g_auto/h_1440,q_75,w_1080/v1/assets/images/11363560/2020/2/24/7be7b57d-ae1a-4516-851f-f95052258f0b1582547571014-WROGN-Men-Tshirts-5981582547569714-1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
   },
   {
-    "id": 2,
-    "name": "Casual Black Tee",
-    "type": "shirt",
-    "color": "black",
-    "size": "L",
-    "quality": "Super-soft Polyester Blend",
-    "price": "$ 20.50",
-    "image_url": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500"
+    "productId": 24058912,
+    "productName": "Men White & Blue Rapid Dry Running T-shirt",
+    "brand": "HRX by Hrithik Roshan",
+    "category": "Tshirts",
+    "color": "White",
+    "landingPageUrl": "sports-wear/hrx-by-hrithik-roshan/hrx-by-hrithik-roshan-men-white-rapid-dry-running-t-shirt/24058912/buy",
+    "price": 499,
+    "mrp": 999,
+    "discount": 500,
+    "discountDisplayStr": "(50% OFF)",
+    "rating": 4.1,
+    "ratingCount": 1250,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://www.myntraglobal.com/cdn/shop/files/562a17aa-f9fc-40e4-858b-13a74d3146ee1746520269801-HRX-by-Hrithik-Roshan-Men-Tshirts-8741746520269163-1.jpg?v=1749058964&width=1080"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
   },
   {
-    "id": 3,
-    "name": "Slim Fit Denim Jeans",
-    "type": "jeans",
-    "color": "blue",
-    "size": "32",
-    "quality": "Heavyweight Denim",
-    "price": "$ 16.49",
-    "image_url": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500"
+    "productId": 19485721,
+    "productName": "Unisex Black Smash Leather Sneakers",
+    "brand": "Puma",
+    "category": "Sneakers",
+    "color": "Black",
+    "landingPageUrl": "casual-shoes/puma/puma-unisex-black-smash-leather-sneakers/19485721/buy",
+    "price": 2399,
+    "mrp": 3999,
+    "discount": 1600,
+    "discountDisplayStr": "(40% OFF)",
+    "rating": 4.5,
+    "ratingCount": 3120,
+    "gender": "Unisex",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://m.media-amazon.com/images/I/71jbWPd2KDL._SX575_.jpg"
+      }
+    ],
+    "sizes": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
   },
   {
-    "id": 4,
-    "name": "Heavyweight Hooded Sweatshirt",
-    "type": "hoodie",
-    "color": "grey",
-    "size": "XL",
-    "quality": "Fleece-lined Cotton",
-    "price": "$ 23.99",
-    "image_url": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500"
+    "productId": 13647182,
+    "productName": "Women Olive Green Solid Tailored Jacket",
+    "brand": "Roadster",
+    "category": "Jackets",
+    "color": "Olive",
+    "landingPageUrl": "jackets/roadster/roadster-women-olive-green-solid-tailored-jacket/13647182/buy",
+    "price": 1199,
+    "mrp": 2999,
+    "discount": 1800,
+    "discountDisplayStr": "(60% OFF)",
+    "rating": 3.9,
+    "ratingCount": 850,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_200,w_200,c_fill,g_auto/h_1440,q_75,w_1080/v1/assets/images/11990336/2020/12/8/1347e5c9-ff61-4f24-b0bd-b08f001cdb351607447495794-Roadster-Women-Olive-Green-Antiviral-Finish-Solid-Tailored-J-1.jpg"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ]
   },
   {
-    "id": 5,
-    "name": "Chino Trousers",
-    "type": "pants",
-    "color": "beige",
-    "size": "34",
-    "quality": "Stretch Twill Cotton",
-    "price": "$ 18.99",
-    "image_url": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=500"
+    "productId": 14235890,
+    "productName": "Men Slim Fit Opaque Casual Shirt",
+    "brand": "Highlander",
+    "category": "Shirts",
+    "color": "White",
+    "landingPageUrl": "shirts/highlander/highlander-men-slim-fit-opaque-casual-shirt/14235890/buy",
+    "price": 599,
+    "mrp": 1499,
+    "discount": 900,
+    "discountDisplayStr": "(60% OFF)",
+    "rating": 4.0,
+    "ratingCount": 2410,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://image.hm.com/assets/hm/02/7c/027c03a3a0e856f5fc98a656a8c2eb571c92eeef.jpg?imwidth=1536"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
   },
   {
-    "id": 6,
-    "name": "Leather Biker Jacket",
-    "type": "jacket",
-    "color": "black",
-    "size": "L",
-    "quality": "Genuine Lambskin Leather",
-    "price": "$ 29.59",
-    "image_url": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500"
+    "productId": 15893041,
+    "productName": "Women Pink Floral Print Kurta with Trousers",
+    "brand": "Anubhutee",
+    "category": "Kurta Sets",
+    "color": "Pink",
+    "landingPageUrl": "ethnic-wear/anubhutee/anubhutee-women-pink-floral-print-kurta/15893041/buy",
+    "price": 1299,
+    "mrp": 3299,
+    "discount": 2000,
+    "discountDisplayStr": "(60% OFF)",
+    "rating": 4.3,
+    "ratingCount": 4200,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://th.bing.com/th/id/R.fb17456321a40753eeb87191e9824a81?rik=9qJb%2fFDF0lCnPA&riu=http%3a%2f%2fwardrobecrush.com%2fcdn%2fshop%2ffiles%2f61W2ViTZjdL.jpg%3fv%3d1758030375&ehk=8vjwyCjZg22d30fKJIJ5%2fIXjunXGFrPzHdkCPOLlWRc%3d&risl=&pid=ImgRaw&r=0"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ]
   },
   {
-    "id": 7,
-    "name": "Summer Floral Dress",
-    "type": "dress",
-    "color": "yellow",
-    "size": "S",
-    "quality": "Lightweight Rayon",
-    "price": "$ 23.99",
-    "image_url": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500"
+    "productId": 17094231,
+    "productName": "Men Black Skinny Fit Jeans",
+    "brand": "Levis",
+    "category": "Jeans",
+    "color": "Black",
+    "landingPageUrl": "jeans/levis/levis-men-black-skinny-fit-jeans/17094231/buy",
+    "price": 2099,
+    "mrp": 3499,
+    "discount": 1400,
+    "discountDisplayStr": "(40% OFF)",
+    "rating": 4.4,
+    "ratingCount": 980,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://tse1.mm.bing.net/th/id/OIP.TTU_STiB7zTvxb7_Vss0LwHaIl?r=0&cb=thumbexpctl1&w=1760&h=2040&rs=1&pid=ImgDetMain&o=7&rm=3"
+      }
+    ],
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36"
+    ]
   },
   {
-    "id": 8,
-    "name": "Athletic Running Shorts",
-    "type": "shorts",
-    "color": "black",
-    "size": "M",
-    "quality": "Moisture-wicking Nylon",
-    "price": "$ 10.59",
-    "image_url": "https://images.unsplash.com/photo-1539185441755-769473a23570?w=500"
+    "productId": 18239014,
+    "productName": "Women Blue Skinny Fit Mid-Rise Clean Look Jeans",
+    "brand": "Kook N Keech",
+    "category": "Jeans",
+    "color": "Blue",
+    "landingPageUrl": "jeans/kook-n-keech/kook-n-keech-women-blue-skinny-fit-jeans/18239014/buy",
+    "price": 999,
+    "mrp": 2499,
+    "discount": 1500,
+    "discountDisplayStr": "(60% OFF)",
+    "rating": 4.1,
+    "ratingCount": 1100,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://rukminim2.flixcart.com/image/1358/1358/ksyz8280/jean/q/f/b/26-13933390-kook-n-keech-original-imag6f2ydg3gcppq.jpeg?q=90"
+      }
+    ],
+    "sizes": [
+      "26",
+      "28",
+      "30",
+      "32"
+    ]
   },
   {
-    "id": 9,
-    "name": "Cable-knit Sweater",
-    "type": "sweater",
-    "color": "white",
-    "size": "M",
-    "quality": "100% Merino Wool",
-    "price": "$ 28.99",
-    "image_url": "https://images.unsplash.com/photo-1614975058789-41316d0e2e9c?w=500"
+    "productId": 12893042,
+    "productName": "Men Navy Solid Bomber Jacket",
+    "brand": "Mast & Harbour",
+    "category": "Jackets",
+    "color": "Navy Blue",
+    "landingPageUrl": "jackets/mast-&-harbour/mast-&-harbour-men-navy-bomber-jacket/12893042/buy",
+    "price": 1499,
+    "mrp": 3749,
+    "discount": 2250,
+    "discountDisplayStr": "(60% OFF)",
+    "rating": 4.2,
+    "ratingCount": 1420,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_200,w_200,c_fill,g_auto/h_1440,q_100,w_1080/v1/assets/images/11972740/2021/9/1/2f5468da-7338-450a-b1e9-5f2b933524711630490515555-Mast--Harbour-Men-Navy-Blue-Solid-Bomber-Jacket-443163049051-1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
   },
   {
-    "id": 10,
-    "name": "Formal Blazer Jacket",
-    "type": "jacket",
-    "color": "navy",
-    "size": "40R",
-    "quality": "Tailored Wool Blend",
-    "price": "$ 34.99",
-    "image_url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500"
+    "productId": 19483011,
+    "productName": "Women Black Solid A-Line Sustainable Dress",
+    "brand": "Tokyo Talkies",
+    "category": "Dresses",
+    "color": "Black",
+    "landingPageUrl": "dresses/tokyo-talkies/tokyo-talkies-women-black-solid-dress/19483011/buy",
+    "price": 649,
+    "mrp": 1299,
+    "discount": 650,
+    "discountDisplayStr": "(50% OFF)",
+    "rating": 4.0,
+    "ratingCount": 2250,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_200,w_200,c_fill,g_auto/h_1440,q_100,w_1080/v1/assets/images/15953948/2021/10/30/c8acc132-7666-46a1-b115-58d01843d5fb1635581116453TokyoTalkiesBlackA-LineDress1.jpg"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ]
   },
   {
-    "id": 11,
-    "name": "Linen Beach Shirt",
-    "type": "shirt",
-    "color": "white",
-    "size": "L",
-    "quality": "Pure Organic Linen",
-    "price": "$ 17.50",
-    "image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=500"
+    "productId": 20394812,
+    "productName": "Men Black Solid Tailored Slim Fit Suit",
+    "brand": "Raymond",
+    "category": "Suits",
+    "color": "Black",
+    "landingPageUrl": "suits/raymond/raymond-men-black-solid-tailored-suit/20394812/buy",
+    "price": 4999,
+    "mrp": 9999,
+    "discount": 5000,
+    "discountDisplayStr": "(50% OFF)",
+    "rating": 4.6,
+    "ratingCount": 350,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://m.media-amazon.com/images/I/51LcP4RWOEL._SX679_.jpg"
+      }
+    ],
+    "sizes": [
+      "38",
+      "40",
+      "42",
+      "44"
+    ]
   },
   {
-    "id": 12,
-    "name": "Cargo Utility Pants",
-    "type": "pants",
-    "color": "olive",
-    "size": "36",
-    "quality": "Ripstop Cotton",
-    "price": "$ 18.99",
-    "image_url": "https://images.unsplash.com/photo-1517423568366-8b83523034fd?w=500"
+    "productId": 21049382,
+    "productName": "Women Off-White & Gold Printed Kurta Set",
+    "brand": "Libas",
+    "category": "Kurta Sets",
+    "color": "Off-White",
+    "landingPageUrl": "ethnic-wear/libas/libas-women-off-white-printed-kurta-set/21049382/buy",
+    "price": 1799,
+    "mrp": 4499,
+    "discount": 2700,
+    "discountDisplayStr": "(60% OFF)",
+    "rating": 4.3,
+    "ratingCount": 3310,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/21049382/2023/2/18/b79fa8de-782f-4cfa-93a1-e4fbfd1e290a1676729012908LibasWomenKurtaSets1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ]
   },
   {
-    "id": 13,
-    "name": "Puffer Winter Coat",
-    "type": "jacket",
-    "color": "red",
-    "size": "XL",
-    "quality": "Water-resistant Down Fill",
-    "price": "$ 29.50",
-    "image_url": "https://images.unsplash.com/photo-1544923246-77307dd654cb?w=500"
+    "productId": 22485912,
+    "productName": "Men Printed Cotton Hooded Sweatshirt",
+    "brand": "Jack & Jones",
+    "category": "Sweatshirts",
+    "color": "Olive",
+    "landingPageUrl": "sweatshirts/jack-&-jones/jack-jones-men-printed-cotton-sweatshirt/22485912/buy",
+    "price": 1499,
+    "mrp": 2999,
+    "discount": 1500,
+    "discountDisplayStr": "(50% OFF)",
+    "rating": 4.1,
+    "ratingCount": 670,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/22485912/2023/4/22/e0f9ab4c-d9c0-43ef-b2c3-492df8daebf11682190112093JackJonesMenSweatshirts1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
   },
   {
-    "id": 14,
-    "name": "Flannel Plaid Shirt",
-    "type": "shirt",
-    "color": "red",
-    "size": "S",
-    "quality": "Brushed Heavy Cotton",
-    "price": "$ 20",
-    "image_url": "https://images.unsplash.com/photo-1559551345-2b9c51cbdfd2?w=500"
+    "productId": 23485019,
+    "productName": "Women Yellow & Green Floral Print Maxi Dress",
+    "brand": "Sera",
+    "category": "Dresses",
+    "color": "Yellow",
+    "landingPageUrl": "dresses/sera/sera-women-yellow-green-floral-maxi-dress/23485019/buy",
+    "price": 899,
+    "mrp": 2499,
+    "discount": 1600,
+    "discountDisplayStr": "(64% OFF)",
+    "rating": 4.2,
+    "ratingCount": 1120,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/23485019/2023/5/30/a1e9df4c-83b2-49cf-bdc2-f19da7de0a391685490129038SeraWomenDresses1.jpg"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ]
   },
   {
-    "id": 15,
-    "name": "Polo Golf Shirt",
-    "type": "shirt",
-    "color": "green",
-    "size": "M",
-    "quality": "Pique Cotton Knit",
-    "price": "$ 19",
-    "image_url": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=500"
+    "productId": 24859012,
+    "productName": "Men Charcoal Grey Checked Slim Fit Formal Trouser",
+    "brand": "Louis Philippe",
+    "category": "Trousers",
+    "color": "Charcoal Grey",
+    "landingPageUrl": "trousers/louis-philippe/louis-philippe-men-charcoal-grey-formal-trouser/24859012/buy",
+    "price": 1799,
+    "mrp": 2999,
+    "discount": 1200,
+    "discountDisplayStr": "(40% OFF)",
+    "rating": 4.5,
+    "ratingCount": 430,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/24859012/2023/7/12/f9a8cb4d-e9c0-482a-bd12-a7f4daebc10a1689190112903LouisPhilippeMenTrousers1.jpg"
+      }
+    ],
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36"
+    ]
   },
   {
-    "id": 16,
-    "name": "Activewear Leggings",
-    "type": "pants",
-    "color": "purple",
-    "size": "S",
-    "quality": "High-rise Spandex Blend",
-    "price": "$ 23.99",
-    "image_url": "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=500"
+    "productId": 25983011,
+    "productName": "Women Teal Blue Checked Casual Shirt",
+    "brand": "The Souled Store",
+    "category": "Shirts",
+    "color": "Teal Blue",
+    "landingPageUrl": "shirts/the-souled-store/the-souled-store-women-teal-blue-checked-shirt/25983011/buy",
+    "price": 999,
+    "mrp": 1599,
+    "discount": 600,
+    "discountDisplayStr": "(37% OFF)",
+    "rating": 4.3,
+    "ratingCount": 890,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/25983011/2023/8/20/d0f9ab2e-c3d0-4ef2-ba1c-fa23db8ea39c1692490112093TheSouledStoreWomenShirts1.jpg"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ]
   },
   {
-    "id": 17,
-    "name": "Denim Skirt",
-    "type": "skirt",
-    "color": "blue",
-    "size": "28",
-    "quality": "Sturdy Wash Denim",
-    "price": "$ 19.99",
-    "image_url": "https://images.unsplash.com/photo-1582142306909-195724d33ab2?w=500"
+    "productId": 26894031,
+    "productName": "Men Grey Melange Solid Joggers",
+    "brand": "Nike",
+    "category": "Joggers",
+    "color": "Grey Melange",
+    "landingPageUrl": "track-pants/nike/nike-men-grey-melange-solid-joggers/26894031/buy",
+    "price": 2799,
+    "mrp": 3999,
+    "discount": 1200,
+    "discountDisplayStr": "(30% OFF)",
+    "rating": 4.6,
+    "ratingCount": 1560,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/26894031/2023/9/15/e1a9fb4d-82d0-4efc-a832-fa32deba39201694790112903NikeMenJoggers1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
   },
   {
-    "id": 18,
-    "name": "Unisex Tracksuit Pants",
-    "type": "pants",
-    "color": "black",
-    "size": "M",
-    "quality": "Soft Tri-blend Fleece",
-    "price": "$ 17.50",
-    "image_url": "https://images.unsplash.com/photo-1551854838-212c50b4c184?w=500"
+    "productId": 27893012,
+    "productName": "Women Mustard Yellow Ethnic Motifs Anarkali Kurta",
+    "brand": "Sangria",
+    "category": "Kurtas",
+    "color": "Yellow",
+    "landingPageUrl": "ethnic-wear/sangria/sangria-women-mustard-yellow-anarkali-kurta/27893012/buy",
+    "price": 1049,
+    "mrp": 2999,
+    "discount": 1950,
+    "discountDisplayStr": "(65% OFF)",
+    "rating": 4.2,
+    "ratingCount": 2450,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/27893012/2023/10/5/ca8f9ba3-e0d2-4cf3-ba2c-fa9dbdb8e3901696490112903SangriaWomenKurtas1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ]
   },
   {
-    "id": 19,
-    "name": "Windbreaker Wind Jacket",
-    "type": "jacket",
-    "color": "blue",
-    "size": "L",
-    "quality": "Lightweight Ripstop Nylon",
-    "price": "$ 24.99",
-    "image_url": "https://images.unsplash.com/photo-1548883354-7622d03aca27?w=500"
+    "productId": 28940311,
+    "productName": "Men Navy Solid Regular Fit Denim Jacket",
+    "brand": "Wrangler",
+    "category": "Jackets",
+    "color": "Navy Blue",
+    "landingPageUrl": "jackets/wrangler/wrangler-men-navy-regular-fit-denim-jacket/28940311/buy",
+    "price": 1999,
+    "mrp": 3999,
+    "discount": 2000,
+    "discountDisplayStr": "(50% OFF)",
+    "rating": 4.3,
+    "ratingCount": 610,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/28940311/2023/11/12/d9fb4ae0-c3da-4328-ba2a-a9f3dbdceba91699790112093WranglerMenJackets1.jpg"
+      }
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ]
   },
   {
-    "id": 20,
-    "name": "Elegant Silk Blouse",
-    "type": "shirt",
-    "color": "pink",
-    "size": "S",
-    "quality": "100% Mulberry Silk",
-    "price": "$ 21.99",
-    "image_url": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=500"
+    "productId": 29840123,
+    "productName": "Women Multi Printed Regular Top",
+    "brand": "ONLY",
+    "category": "Tops",
+    "color": "Multi",
+    "landingPageUrl": "tops/only/only-women-multi-printed-regular-top/29840123/buy",
+    "price": 799,
+    "mrp": 1999,
+    "discount": 1200,
+    "discountDisplayStr": "(60% OFF)",
+    "rating": 4.1,
+    "ratingCount": 1130,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/29840123/2023/12/1/a0d9bf4c-83da-4ef2-ba1c-fa32daebd2931701490112093ONLYWomenTops1.jpg"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ]
   },
   {
-    "id": 21,
-    "name": "Corduroy Button-Up",
-    "type": "shirt",
-    "color": "brown",
-    "size": "XL",
-    "quality": "Fine Wale Corduroy",
-    "price": "$ 20",
-    "image_url": "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=500"
+    "productId": 30948211,
+    "productName": "Men Olive Green & Off-White Colorblock Hooded Sweatshirt",
+    "brand": "Campus Sutra",
+    "category": "Sweatshirts",
+    "color": "Olive Green",
+    "landingPageUrl": "sweatshirts/campus-sutra/campus-sutra-men-colorblock-hooded-sweatshirt/30948211/buy",
+    "price": 899,
+    "mrp": 2199,
+    "discount": 1300,
+    "discountDisplayStr": "(59% OFF)",
+    "rating": 4.0,
+    "ratingCount": 1780,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/30948211/2024/1/15/d1af9eb2-7fa3-4cf2-ba2c-ef1abdcfe90a170534912903CampusSutraMenSweatshirts1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
   },
   {
-    "id": 22,
-    "name": "Formal Pleated Trousers",
-    "type": "pants",
-    "color": "charcoal",
-    "size": "32",
-    "quality": "Polyester-Viscose Suit Fabric",
-    "price": "$ 19",
-    "image_url": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500"
+    "productId": 31049281,
+    "productName": "Women Lavender Solid Cropped Cardigan",
+    "brand": "H&M",
+    "category": "Sweaters",
+    "color": "Lavender",
+    "landingPageUrl": "sweaters/hm/hm-women-lavender-solid-cropped-cardigan/31049281/buy",
+    "price": 1499,
+    "mrp": 2299,
+    "discount": 800,
+    "discountDisplayStr": "(35% OFF)",
+    "rating": 4.5,
+    "ratingCount": 920,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/31049281/2024/2/10/a0fb8de2-c9da-4ef3-ba12-f23abdaec1a31707590112093HMWomenSweaters1.jpg"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ]
   },
   {
-    "id": 23,
-    "name": "Cozy Knit Cardigan",
-    "type": "sweater",
-    "color": "beige",
-    "size": "L",
-    "quality": "Soft Acrylic & Wool Blend",
-    "price": "$ 16",
-    "image_url": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500"
+    "productId": 32059381,
+    "productName": "Men Slim Fit Checked Casual Shirt",
+    "brand": "Dennis Lingo",
+    "category": "Shirts",
+    "color": "Red",
+    "landingPageUrl": "shirts/dennis-lingo/dennis-lingo-men-slim-fit-checked-shirt/32059381/buy",
+    "price": 699,
+    "mrp": 1849,
+    "discount": 1150,
+    "discountDisplayStr": "(62% OFF)",
+    "rating": 4.1,
+    "ratingCount": 3540,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/32059381/2024/3/2/c0a9efbd-e3db-42cf-ba1c-fa32decfe9a21709390112093DennisLingoMenShirts1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ]
   },
   {
-    "id": 24,
-    "name": "Classic Trench Coat",
-    "type": "jacket",
-    "color": "khaki",
-    "size": "M",
-    "quality": "Double-breasted Cotton Gabardine",
-    "price": "$ 40",
-    "image_url": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500"
+    "productId": 33049182,
+    "productName": "Women Black Poly-Silk Solid Saree",
+    "brand": "Mitera",
+    "category": "Sarees",
+    "color": "Black",
+    "landingPageUrl": "sarees/mitera/mitera-women-black-poly-silk-solid-saree/33049182/buy",
+    "price": 1199,
+    "mrp": 3999,
+    "discount": 2800,
+    "discountDisplayStr": "(70% OFF)",
+    "rating": 4.2,
+    "ratingCount": 1850,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/33049182/2024/4/5/b9f8dbe3-78da-43ef-ba2c-ef12abde90121712290112903MiteraWomenSarees1.jpg"
+      }
+    ],
+    "sizes": [
+      "Onesize"
+    ]
   },
   {
-    "id": 25,
-    "name": "Graphic Streetwear Hoodie",
-    "type": "hoodie",
-    "color": "black",
-    "size": "XL",
-    "quality": "Heavy French Terry Cotton",
-    "price": "$ 18.99",
-    "image_url": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=500"
+    "productId": 34059281,
+    "productName": "Men Beige Slim Fit Chinos",
+    "brand": "United Colors of Benetton",
+    "category": "Trousers",
+    "color": "Beige",
+    "landingPageUrl": "trousers/united-colors-of-benetton/ucb-men-beige-slim-fit-chinos/34059281/buy",
+    "price": 1999,
+    "mrp": 3999,
+    "discount": 2000,
+    "discountDisplayStr": "(50% OFF)",
+    "rating": 4.3,
+    "ratingCount": 740,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/34059281/2024/5/12/d0ea7cb2-e3da-4328-ba2c-fa29cbdec9011715490112903UCBMenTrousers1.jpg"
+      }
+    ],
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36"
+    ]
   },
   {
-    "id": 26,
-    "name": "Pleated A-Line Skirt",
-    "type": "skirt",
-    "color": "grey",
-    "size": "M",
-    "quality": "Sturdy Tartan Blend",
-    "price": "$ 14.50",
-    "image_url": "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=500"
+    "productId": 35049382,
+    "productName": "Women Burgundy Solid Track Pants",
+    "brand": "Athleisure",
+    "category": "Track Pants",
+    "color": "Burgundy",
+    "landingPageUrl": "track-pants/athleisure/athleisure-women-burgundy-track-pants/35049382/buy",
+    "price": 899,
+    "mrp": 1799,
+    "discount": 900,
+    "discountDisplayStr": "(50% OFF)",
+    "rating": 4.0,
+    "ratingCount": 530,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/35049382/2024/6/18/b0f9abda-e3da-4cfa-ba2c-f23decfa903a1718690112093AthleisureWomenTrackPants1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
   },
   {
-    "id": 27,
-    "name": "Sweat Shorts",
-    "type": "shorts",
-    "color": "grey",
-    "size": "L",
-    "quality": "Unbrushed Loopback Cotton",
-    "price": "$ 15",
-    "image_url": "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500"
+    "productId": 36049381,
+    "productName": "Men Pack of 3 Solid Round Neck T-shirts",
+    "brand": "Wildcraft",
+    "category": "Tshirts",
+    "color": "Multi",
+    "landingPageUrl": "tshirts/wildcraft/wildcraft-men-pack-of-3-solid-tshirts/36049381/buy",
+    "price": 1199,
+    "mrp": 2399,
+    "discount": 1200,
+    "discountDisplayStr": "(50% OFF)",
+    "rating": 4.2,
+    "ratingCount": 2150,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/36049381/2024/7/1/a0d9cf4d-e3da-4cfa-ba1c-fa32decfe902171981112903WildcraftMenTshirts1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
   },
   {
-    "id": 28,
-    "name": "V-Neck Cashmere Jumper",
-    "type": "sweater",
-    "color": "black",
-    "size": "M",
-    "quality": "100% Pure Mongolian Cashmere",
-    "price": "$ 30.50",
-    "image_url": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500"
+    "productId": 37049281,
+    "productName": "Women Pink Floral Print Pleated Midi Dress",
+    "brand": "Harpa",
+    "category": "Dresses",
+    "color": "Pink",
+    "landingPageUrl": "dresses/harpa/harpa-women-pink-floral-midi-dress/37049281/buy",
+    "price": 999,
+    "mrp": 2499,
+    "discount": 1500,
+    "discountDisplayStr": "(60% OFF)",
+    "rating": 4.1,
+    "ratingCount": 1670,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/37049281/2024/7/12/c0a9efbd-e3da-4cf2-ba1c-f23abdaec1a31720790112093HarpaWomenDresses1.jpg"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ]
   },
   {
-    "id": 29,
-    "name": "Evening Maxi Dress",
-    "type": "dress",
-    "color": "red",
-    "size": "S",
-    "quality": "Satin Finish Polyester",
-    "price": "$ 35.99",
-    "image_url": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500"
+    "productId": 38049382,
+    "productName": "Men Olive Green Solid Regular Fit Cargo Trouser",
+    "brand": "Jack & Jones",
+    "category": "Trousers",
+    "color": "Olive Green",
+    "landingPageUrl": "trousers/jack-&-jones/jack-jones-men-olive-solid-cargo-trouser/38049382/buy",
+    "price": 2399,
+    "mrp": 3999,
+    "discount": 1600,
+    "discountDisplayStr": "(40% OFF)",
+    "rating": 4.4,
+    "ratingCount": 810,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/38049382/2024/8/1/d9ea8bc2-7fa3-4cf2-ba2c-ef1abdcfe90a1722490112903JackJonesMenTrousers1.jpg"
+      }
+    ],
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36"
+    ]
   },
   {
-    "id": 30,
-    "name": "Denim Utility Jacket",
-    "type": "jacket",
-    "color": "blue",
-    "size": "L",
-    "quality": "Thick Selvedge Denim",
-    "price": "$ 25",
-    "image_url": "https://images.unsplash.com/photo-1611312449412-6cefac5dc3e4?w=500"
+    "productId": 39049281,
+    "productName": "Women Off-White Geometric Printed Kurta",
+    "brand": "House of Pataudi",
+    "category": "Kurtas",
+    "color": "Off-White",
+    "landingPageUrl": "ethnic-wear/house-of-pataudi/house-of-pataudi-women-printed-kurta/39049281/buy",
+    "price": 1399,
+    "mrp": 3499,
+    "discount": 2100,
+    "discountDisplayStr": "(60% OFF)",
+    "rating": 4.3,
+    "ratingCount": 1150,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/39049281/2024/8/20/b0ea9cb2-e3da-4cf2-ba1c-fa32decfe9021724190112903HouseOfPataudiWomenKurtas1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ]
+  },
+  {
+    "productId": 40049382,
+    "productName": "Men Blue Distressed Light Wash Jeans",
+    "brand": "Pepe Jeans",
+    "category": "Jeans",
+    "color": "Blue",
+    "landingPageUrl": "jeans/pepe-jeans/pepe-jeans-men-blue-distressed-jeans/40049382/buy",
+    "price": 1999,
+    "mrp": 3999,
+    "discount": 2000,
+    "discountDisplayStr": "(50% OFF)",
+    "rating": 4.2,
+    "ratingCount": 630,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/40049382/2024/9/10/a0f9ebda-e3da-4cfa-ba2c-f23decfa903a1725990112903PepeJeansMenJeans1.jpg"
+      }
+    ],
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36"
+    ]
+  },
+  {
+    "productId": 41049381,
+    "productName": "Women Grey Melange Solid Zip-Up Sweatshirt",
+    "brand": "Puma",
+    "category": "Sweatshirts",
+    "color": "Grey Melange",
+    "landingPageUrl": "sweatshirts/puma/puma-women-grey-solid-sweatshirt/41049381/buy",
+    "price": 2249,
+    "mrp": 4499,
+    "discount": 2250,
+    "discountDisplayStr": "(50% OFF)",
+    "rating": 4.5,
+    "ratingCount": 910,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/41049381/2024/9/22/d9fa8be3-78da-4cf3-ba2c-fa9dbdb8e3901727021112093PumaWomenSweatshirts1.jpg"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ]
+  },
+  {
+    "productId": 42049281,
+    "productName": "Men Pack of 2 Printed Cotton Boxers",
+    "brand": "XYXX",
+    "category": "Boxers",
+    "color": "Blue",
+    "landingPageUrl": "innerwear/xyxx/xyxx-men-pack-of-2-printed-boxers/42049281/buy",
+    "price": 599,
+    "mrp": 999,
+    "discount": 400,
+    "discountDisplayStr": "(40% OFF)",
+    "rating": 4.3,
+    "ratingCount": 1850,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/42049281/2024/10/5/ca8f9ba3-e0d2-4cf3-ba2c-fa9dbdb8e3901728190112903XYXXMenBoxers1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "productId": 43049382,
+    "productName": "Women Green Solid Shacket Style Jacket",
+    "brand": "Street 9",
+    "category": "Jackets",
+    "color": "Green",
+    "landingPageUrl": "jackets/street-9/street-9-women-green-solid-jacket/43049382/buy",
+    "price": 1249,
+    "mrp": 2499,
+    "discount": 1250,
+    "discountDisplayStr": "(50% OFF)",
+    "rating": 4.0,
+    "ratingCount": 420,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/43049382/2024/10/18/f9a8cb4d-e9c0-482a-bd12-a7f4daebc10a1729290112093Street9WomenJackets1.jpg"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ]
+  },
+  {
+    "productId": 44049381,
+    "productName": "Men Maroon Solid Slim Fit Polo Collar T-shirt",
+    "brand": "Allen Solly",
+    "category": "Tshirts",
+    "color": "Maroon",
+    "landingPageUrl": "tshirts/allen-solly/allen-solly-men-maroon-solid-polo-tshirt/44049381/buy",
+    "price": 799,
+    "mrp": 1499,
+    "discount": 700,
+    "discountDisplayStr": "(47% OFF)",
+    "rating": 4.2,
+    "ratingCount": 3100,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/44049381/2024/11/1/a0d9bf4c-83da-4ef2-ba1c-fa32daebd2931730490112903AllenSollyMenTshirts1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ]
+  },
+  {
+    "productId": 45049281,
+    "productName": "Women Teal Blue Solid Pullover Sweater",
+    "brand": "Monte Carlo",
+    "category": "Sweaters",
+    "color": "Teal Blue",
+    "landingPageUrl": "sweaters/monte-carlo/monte-carlo-women-teal-solid-sweater/45049281/buy",
+    "price": 1899,
+    "mrp": 3199,
+    "discount": 1300,
+    "discountDisplayStr": "(40% OFF)",
+    "rating": 4.4,
+    "ratingCount": 540,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/45049281/2024/11/12/d1af9eb2-7fa3-4cf2-ba2c-ef1abdcfe90a1731390112093MonteCarloWomenSweaters1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "productId": 46049382,
+    "productName": "Men Blue Distressed Slim Fit Denim Shorts",
+    "brand": "Roadster",
+    "category": "Shorts",
+    "color": "Blue",
+    "landingPageUrl": "shorts/roadster/roadster-men-blue-denim-shorts/46049382/buy",
+    "price": 699,
+    "mrp": 1699,
+    "discount": 1000,
+    "discountDisplayStr": "(59% OFF)",
+    "rating": 4.1,
+    "ratingCount": 2150,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/46049382/2024/11/20/b0ea9cb2-e3da-4cf2-ba1c-fa32decfe9021732090112903RoadsterMenShorts1.jpg"
+      }
+    ],
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36"
+    ]
+  },
+  {
+    "productId": 47049281,
+    "productName": "Women Multi Striped Hooded Poncho Style Sweater",
+    "brand": "Nayo",
+    "category": "Sweaters",
+    "color": "Multi",
+    "landingPageUrl": "sweaters/nayo/nayo-women-multi-striped-poncho/47049281/buy",
+    "price": 1299,
+    "mrp": 3299,
+    "discount": 2000,
+    "discountDisplayStr": "(60% OFF)",
+    "rating": 4.2,
+    "ratingCount": 780,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/47049281/2024/12/5/ca8f9ba3-e0d2-4cf3-ba2c-fa9dbdb8e3901733390112093NayoWomenSweaters1.jpg"
+      }
+    ],
+    "sizes": [
+      "Free Size"
+    ]
+  },
+  {
+    "productId": 48049382,
+    "productName": "Men Mustard Yellow Printed Cotton Kurta",
+    "brand": "KOTTY",
+    "category": "Kurtas",
+    "color": "Mustard Yellow",
+    "landingPageUrl": "ethnic-wear/kotty/kotty-men-mustard-printed-kurta/48049382/buy",
+    "price": 599,
+    "mrp": 1499,
+    "discount": 900,
+    "discountDisplayStr": "(60% OFF)",
+    "rating": 3.9,
+    "ratingCount": 1130,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/48049382/2024/12/15/d9fb4ae0-c3da-4328-ba2a-a9f3dbdceba91734290112903KottyMenKurtas1.jpg"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "productId": 49049281,
+    "productName": "Women Olive Green Utility Solid Jumpsuit",
+    "brand": "DressBerry",
+    "category": "Jumpsuits",
+    "color": "Olive Green",
+    "landingPageUrl": "jumpsuits/dressberry/dressberry-women-olive-solid-jumpsuit/49049281/buy",
+    "price": 1199,
+    "mrp": 2999,
+    "discount": 1800,
+    "discountDisplayStr": "(60% OFF)",
+    "rating": 4.1,
+    "ratingCount": 940,
+    "gender": "Women",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/49049281/2025/1/10/a0fb8de2-c9da-4ef3-ba12-f23abdaec1a31736490112093DressBerryWomenJumpsuits1.jpg"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ]
+  },
+  {
+    "productId": 50049382,
+    "productName": "Men Pack of 3 Solid Crew-Length Socks",
+    "brand": "Adidas",
+    "category": "Socks",
+    "color": "White",
+    "landingPageUrl": "socks/adidas/adidas-men-pack-of-3-solid-socks/50049382/buy",
+    "price": 499,
+    "mrp": 899,
+    "discount": 400,
+    "discountDisplayStr": "(44% OFF)",
+    "rating": 4.4,
+    "ratingCount": 1650,
+    "gender": "Men",
+    "images": [
+      {
+        "view": "front",
+        "src": "https://assets.myntassets.com/h_800,q_90_double/assets/images/50049382/2025/1/22/d0ea7cb2-e3da-4328-ba2c-fa29cbdec9011737490112903AdidasMenSocks1.jpg"
+      }
+    ],
+    "sizes": [
+      "Onesize"
+    ]
   }
 ]

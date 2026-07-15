@@ -1,29 +1,33 @@
-// App.jsx
 import { useState, useEffect } from "react";
 import ChatButton from "./components/ChatButton";
 import ChatWidget from "./components/ChatWidget";
+import PaymentPage from "./components/PaymentPage"; // <-- 1. Import your new PaymentPage
 import * as api from "./api";
 import "./styles.css";
 
 function App() {
-  // ---- STATE (the app's memory) ----
-  const [isOpen, setIsOpen] = useState(false);               // Chat open/closed toggle
-  const [online, setOnline] = useState(false);               // Backend reachable?
-  const [messages, setMessages] = useState([]);              // Chat history
-  const [loading, setLoading] = useState(false);             // Waiting for bot reply?
-  const [conversationState, setConversationState] = useState(null); // ADK agent state (for memory)
-  const [cart, setCart] = useState([]);                      // local cart view if needed
+  const [isOpen, setIsOpen] = useState(false);                 // Chat widget open state
+  const [currentPage, setCurrentPage] = useState("chat");      // Page controller: "chat" or "payment"
+  const [online, setOnline] = useState(false);                 // Backend status
+  const [messages, setMessages] = useState([]);                // Chat log list
+  const [loading, setLoading] = useState(false);               // Response loader state
+  const [conversationState, setConversationState] = useState(null);
+  const [cart, setCart] = useState([]);                        // Cart item list
 
-  // ---- On mount: Check if backend is alive ----
+  // Check health on mount
   useEffect(() => {
     api.getHealth()
-      .then((h) => setOnline(h.status === "ok" || h.status === "healthy"))
+      .then((h) => setOnline(h.status === "ok"))
       .catch(() => setOnline(false));
+
+    // Sync cart list
+    api.getCart().then((data) => setCart(data || [])).catch(() => { });
   }, []);
 
-  // ---- LOGIC: Send a chat message to the Shopping Agent ----
+  // Send query message
   async function handleSend(userMessage) {
-    // 1. Add the user's message to the chat interface immediately
+    if (!userMessage.trim()) return;
+
     setMessages((prev) => [
       ...prev,
       { id: Date.now(), role: "user", text: userMessage },
@@ -31,31 +35,20 @@ function App() {
     setLoading(true);
 
     try {
-      // 2. Call the backend with the user message and current conversationState
       const result = await api.sendMessage(userMessage, conversationState);
-
-      // 3. Save the returned ADK state so the agent remembers context in the next turn
       if (result.state) {
         setConversationState(result.state);
       }
-
-      // 4. Append the Bot's reply to the message history
       setMessages((prev) => [
         ...prev,
         {
           id: Date.now() + 1,
           role: "bot",
           text: result.text || "I'm sorry, I couldn't process that request.",
+          products: result.products || [],
         },
       ]);
-
-      // 5. Optional: Sync cart state if the agent triggered an add_to_cart action
-      if (result.cart_updated) {
-        api.getCart().then((currentCart) => setCart(currentCart)).catch(() => { });
-      }
-
     } catch (err) {
-      // 6. Show errors as a bot message gracefully instead of crashing
       setMessages((prev) => [
         ...prev,
         {
@@ -70,19 +63,86 @@ function App() {
     }
   }
 
-  // ---- RENDER: Button when closed, Chat widget overlay when open ----
+  // Cart: Add Item Handler
+  async function handleAddToCart(product) {
+    try {
+      await api.addToCart(product.id, product.name, 1);
+      const currentCart = await api.getCart();
+      setCart(currentCart);
+
+      setMessages((prev) => [
+        ...prev,
+        { id: Date.now(), role: "bot", text: `🛒 Added "${product.name}" to cart.` },
+      ]);
+    } catch (err) {
+      console.error("Cart error:", err.message);
+    }
+  }
+
+  // Cart: Remove Item Handler
+  async function handleRemoveFromCart(productId) {
+    try {
+      const result = await api.removeFromCart(productId);
+      if (result.cart) {
+        setCart(result.cart);
+      }
+    } catch (err) {
+      console.error("Cart remove error:", err.message);
+    }
+  }
+
+  // ---- 2. CHECKOUT TRIGGER: Directs to checkout view ----
+  function handleCheckoutTrigger(totalAmount) {
+    if (totalAmount <= 0) return;
+    setCurrentPage("payment"); // Transitions view to payment page
+  }
+
+  // ---- 3. PAYMENT COMPLETED: Clears cart and returns to chat ----
+  async function handlePaymentComplete() {
+    try {
+      // Clear cart
+      await api.processPayment(0); // backend route empties cart list
+      setCart([]);
+
+      // Auto-return to chat pane after 3 seconds of success banner
+      setTimeout(() => {
+        setCurrentPage("chat");
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: Date.now(),
+            role: "bot",
+            text: "🎉 Thank you! Your payment succeeded, and your order has been received. Let me know if you need help finding anything else!",
+          },
+        ]);
+      }, 3500);
+    } catch (err) {
+      console.error("Could not process completion:", err);
+    }
+  }
+
   return (
     <div className="page">
       {isOpen ? (
         <>
           <div className="chat-overlay" onClick={() => setIsOpen(false)} />
-          <ChatWidget
-            online={online}
-            messages={messages}
-            loading={loading}
-            onClose={() => setIsOpen(false)}
-            onSend={handleSend}
-          />
+
+          {/* ---- 4. DYNAMIC PAGE CONTROLLER CHANGER ---- */}
+          {currentPage === "payment" ? (
+            <PaymentPage onPaymentComplete={handlePaymentComplete} />
+          ) : (
+            <ChatWidget
+              online={online}
+              messages={messages}
+              cart={cart}
+              loading={loading}
+              onClose={() => setIsOpen(false)}
+              onSend={handleSend}
+              onAddToCart={handleAddToCart}
+              onRemoveFromCart={handleRemoveFromCart}
+              onCheckout={handleCheckoutTrigger} // Linked directly to trigger
+            />
+          )}
         </>
       ) : (
         <ChatButton onOpen={() => setIsOpen(true)} />

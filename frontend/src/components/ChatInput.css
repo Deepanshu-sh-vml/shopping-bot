@@ -6,6 +6,7 @@
   border-top: 1px solid #e2e8f0;
   background: #fff;
 }
+
 .chat-input textarea {
   flex: 1;
   border: 1px solid #e2e8f0;
@@ -17,7 +18,11 @@
   font-family: inherit;
   outline: none;
 }
-.chat-input textarea:focus { border-color: #6366f1; }
+
+.chat-input textarea:focus {
+  border-color: #6366f1;
+}
+
 .send-btn {
   width: 40px;
   height: 40px;
@@ -27,6 +32,10 @@
   font-size: 16px;
   cursor: pointer;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  background: linear-gradient(135deg, #5398d1, #467ee5);
 }
-.send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.send-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

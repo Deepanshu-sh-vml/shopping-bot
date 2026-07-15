@@ -14,7 +14,7 @@ const STARTER_QUESTIONS = [
 //   messages = array of message objects
 //   loading  = bool (are we waiting for a reply?)
 //   onSend   = function(text) — used by the suggestion chips
-function MessageList({ messages, loading, onSend }) {
+function MessageList({ messages, loading, onSend, onAddToCart, onImageZoom }) {
   const bottomRef = useRef(null);
 
   // Auto-scroll to the newest message whenever messages or loading change
@@ -31,6 +31,7 @@ function MessageList({ messages, loading, onSend }) {
           <p className="welcome-title">Welcome to Shopping Assistant</p>
           <p className="welcome-sub">How can I help you ?</p>
           <div className="suggestions">
+            {/* Assuming STARTER_QUESTIONS is declared elsewhere in this file */}
             {STARTER_QUESTIONS.map((q, i) => (
               <button
                 key={i}
@@ -45,7 +46,14 @@ function MessageList({ messages, loading, onSend }) {
         </div>
       ) : (
         // Render one bubble per message
-        messages.map((msg) => <MessageBubble key={msg.id} message={msg} />)
+        messages.map((msg) => (
+          <MessageBubble
+            key={msg.id}
+            message={msg}
+            onAddToCart={onAddToCart}
+            onImageZoom={onImageZoom} // <-- FIX: Add this missing property!
+          />
+        ))
       )}
 
       {/* Typing indicator while waiting for the backend */}

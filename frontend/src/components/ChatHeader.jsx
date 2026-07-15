@@ -1,26 +1,29 @@
-// Props:
-//   online  = bool (data DOWN ⬇️)
-//   onClose = function to close the widget (event UP ⬆️)
-
 import "./ChatHeader.css";
-function ChatHeader({ online, onClose }) {
+
+function ChatHeader({ online, cartCount = 0, onCartClick, onClose }) {
   return (
     <div className="chat-header">
       <div className="header-left">
-        <div className="header-avatar">🎯</div>
+        <div className="header-avatar">Shop</div>
         <div>
           <div className="header-title">Shopping Assistant</div>
-          <div className="header-status">
-            <span className={online ? "dot dot-on" : "dot dot-off"} />
-            {online ? "Online" : "Offline"}
-          </div>
         </div>
       </div>
 
-      {/* Clicking ✕ tells the parent to close (event UP) */}
-      <button className="header-close" onClick={onClose} aria-label="Close chat">
-        ✕
-      </button>
+      <div className="header-actions">
+        <button
+          className="cart-button"
+          type="button"
+          onClick={onCartClick}
+          aria-label={`Cart with ${cartCount} items`}
+        >
+          <span>Cart</span>
+          <span className="cart-count">{cartCount}</span>
+        </button>
+        <button className="header-close" onClick={onClose} aria-label="Close chat">
+          X
+        </button>
+      </div>
     </div>
   );
 }
