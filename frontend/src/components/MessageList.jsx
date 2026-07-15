@@ -4,9 +4,9 @@ import "./MessageList.css";
 
 // Suggested starter tickets (shown when chat is empty)
 const STARTER_QUESTIONS = [
-  "I was charged twice for my order. Please refund the duplicate.",
-  "I can't log into my account — how do I reset my password?",
-  "The app keeps crashing when I open it. What should I do?",
+  "What formal pants do you have in stock?",
+  "Do you have Leather Sneakers ?",
+  "Do you have any navy blue striped t-shirts?",
   "I want to cancel my order. How do I do that?",
 ];
 
