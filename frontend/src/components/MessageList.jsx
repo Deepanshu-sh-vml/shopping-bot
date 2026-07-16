@@ -4,10 +4,10 @@ import "./MessageList.css";
 
 // Suggested starter tickets (shown when chat is empty)
 const STARTER_QUESTIONS = [
-  "What formal pants do you have in stock?",
-  "Do you have Leather Sneakers ?",
-  "Do you have any navy blue striped t-shirts?",
-  "I want to cancel my order. How do I do that?",
+  "Show me men's blue t-shirts in size M",
+  "I'm looking for a women's red dress, size S",
+  "Do you have black sneakers for men in size 10?",
+  "Find me women's denim jackets in size L",
 ];
 
 // Props (data DOWN):

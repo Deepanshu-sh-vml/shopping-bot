@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import * as api from '../api'; // Import your shopping API client
 import './PaymentPage.css';   // Import the separated stylesheet
+import DummyUpiPage from './DummyUpiPage';
 
-const PaymentPage = ({ onPaymentComplete }) => {
+const PaymentPage = ({ onPaymentComplete, onBack }) => {
     const [cart, setCart] = useState([]);
     const [formData, setFormData] = useState({
         name: '',
@@ -12,6 +13,10 @@ const PaymentPage = ({ onPaymentComplete }) => {
         expiry: '',
         cvc: '',
     });
+
+    const [paymentMethod, setPaymentMethod] = useState('card');
+    const [upiMethod, setUpiMethod] = useState('qr');
+    const [activeUpiApp, setActiveUpiApp] = useState(null);
 
     const [errors, setErrors] = useState({});
     const [isProcessing, setIsProcessing] = useState(false);
@@ -72,37 +77,29 @@ const PaymentPage = ({ onPaymentComplete }) => {
     // Form Validation
     const validateForm = () => {
         const newErrors = {};
-        if (!formData.name.trim()) newErrors.name = 'Name is required';
-        if (!formData.email.trim()) {
-            newErrors.email = 'Email is required';
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            newErrors.email = 'Email is invalid';
-        }
-        if (formData.cardNumber.replace(/\s/g, '').length < 16) {
-            newErrors.cardNumber = 'Card number must be 16 digits';
-        }
-        if (!/^(0[1-9]|1[0-2])\/?([0-9]{2})$/.test(formData.expiry)) {
-            newErrors.expiry = 'Use MM/YY format';
-        }
-        if (formData.cvc.length < 3) {
-            newErrors.cvc = 'CVC must be 3 or 4 digits';
+        if (paymentMethod === 'card') {
+            if (!formData.name.trim()) newErrors.name = 'Name is required';
+            if (!formData.email.trim()) {
+                newErrors.email = 'Email is required';
+            } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+                newErrors.email = 'Email is invalid';
+            }
+            if (formData.cardNumber.replace(/\s/g, '').length < 16) {
+                newErrors.cardNumber = 'Card number must be 16 digits';
+            }
+            if (!/^(0[1-9]|1[0-2])\/?([0-9]{2})$/.test(formData.expiry)) {
+                newErrors.expiry = 'Use MM/YY format';
+            }
+            if (formData.cvc.length < 3) {
+                newErrors.cvc = 'CVC must be 3 or 4 digits';
+            }
         }
         return newErrors;
     };
 
-    // Handle payment submission
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const validationErrors = validateForm();
-
-        if (Object.keys(validationErrors).length > 0) {
-            setErrors(validationErrors);
-            return;
-        }
-
-        setErrors({});
+    // Process API payment
+    const processPaymentAPI = async () => {
         setIsProcessing(true);
-
         try {
             // Process real payment transaction with your python app.py checkout route
             await api.processPayment(totalAmount);
@@ -120,11 +117,41 @@ const PaymentPage = ({ onPaymentComplete }) => {
         }
     };
 
+    // Handle payment submission
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const validationErrors = validateForm();
+
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+            return;
+        }
+
+        setErrors({});
+        await processPaymentAPI();
+    };
+
+    const handleUpiAppSuccess = async () => {
+        setActiveUpiApp(null);
+        await processPaymentAPI();
+    };
+
     // Reset payment page helper
     const handleReset = () => {
         setFormData({ name: '', email: '', cardNumber: '', expiry: '', cvc: '' });
         setPaymentSuccess(false);
     };
+
+    if (activeUpiApp) {
+        return (
+            <DummyUpiPage 
+                appName={activeUpiApp} 
+                amount={displayTotal} 
+                onSuccess={handleUpiAppSuccess} 
+                onCancel={() => setActiveUpiApp(null)} 
+            />
+        );
+    }
 
     if (paymentSuccess) {
         return (
@@ -145,6 +172,9 @@ const PaymentPage = ({ onPaymentComplete }) => {
 
     return (
         <div className="payment-container">
+            <div className="payment-header">
+                <button type="button" className="payment-back-btn" onClick={onBack}>&larr; Back to Chat</button>
+            </div>
             <div className="payment-card">
                 {/* Dynamic Order Summary Section */}
                 <div className="payment-order-summary">
@@ -173,88 +203,158 @@ const PaymentPage = ({ onPaymentComplete }) => {
 
                 <h2 className="payment-title">Secure Checkout</h2>
 
+                <div className="payment-method-toggle" style={{ display: 'flex', gap: '15px', marginBottom: '20px', padding: '10px', background: '#f5f5f5', borderRadius: '8px' }}>
+                    <label style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                        <input type="radio" name="paymentMethod" value="card" checked={paymentMethod === 'card'} onChange={() => setPaymentMethod('card')} />
+                        <strong>Credit / Debit Card</strong>
+                    </label>
+                    <label style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                        <input type="radio" name="paymentMethod" value="upi" checked={paymentMethod === 'upi'} onChange={() => setPaymentMethod('upi')} />
+                        <strong>UPI</strong>
+                    </label>
+                </div>
+
                 {errors.form && <div className="payment-error-alert">{errors.form}</div>}
 
-                <form onSubmit={handleSubmit} className="payment-form">
-                    {/* Billing Name */}
-                    <div className="payment-form-group">
-                        <label className="payment-label">Name on Card</label>
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Jane Doe"
-                            value={formData.name}
-                            onChange={handleChange}
-                            className={`payment-input ${errors.name ? 'error-border' : ''}`}
-                        />
-                        {errors.name && <span className="payment-error-text">{errors.name}</span>}
-                    </div>
-
-                    {/* Email */}
-                    <div className="payment-form-group">
-                        <label className="payment-label">Email Address</label>
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="jane@example.com"
-                            value={formData.email}
-                            onChange={handleChange}
-                            className={`payment-input ${errors.email ? 'error-border' : ''}`}
-                        />
-                        {errors.email && <span className="payment-error-text">{errors.email}</span>}
-                    </div>
-
-                    {/* Card Number */}
-                    <div className="payment-form-group">
-                        <label className="payment-label">Card Number</label>
-                        <input
-                            type="text"
-                            name="cardNumber"
-                            placeholder="0000 0000 0000 0000"
-                            value={formData.cardNumber}
-                            onChange={handleChange}
-                            className={`payment-input ${errors.cardNumber ? 'error-border' : ''}`}
-                        />
-                        {errors.cardNumber && <span className="payment-error-text">{errors.cardNumber}</span>}
-                    </div>
-
-                    {/* Expiry and CVC Row */}
-                    <div className="payment-form-row">
-                        <div className="payment-form-group flex-1">
-                            <label className="payment-label">Expiration (MM/YY)</label>
+                {paymentMethod === 'card' && (
+                    <form onSubmit={handleSubmit} className="payment-form">
+                        {/* Billing Name */}
+                        <div className="payment-form-group">
+                            <label className="payment-label">Name on Card</label>
                             <input
                                 type="text"
-                                name="expiry"
-                                placeholder="MM/YY"
-                                value={formData.expiry}
+                                name="name"
+                                placeholder="Jane Doe"
+                                value={formData.name}
                                 onChange={handleChange}
-                                className={`payment-input ${errors.expiry ? 'error-border' : ''}`}
+                                className={`payment-input ${errors.name ? 'error-border' : ''}`}
                             />
-                            {errors.expiry && <span className="payment-error-text">{errors.expiry}</span>}
+                            {errors.name && <span className="payment-error-text">{errors.name}</span>}
                         </div>
 
-                        <div className="payment-form-group flex-1 ml-10">
-                            <label className="payment-label">CVC / CVV</label>
+                        {/* Email */}
+                        <div className="payment-form-group">
+                            <label className="payment-label">Email Address</label>
                             <input
-                                type="password"
-                                name="cvc"
-                                placeholder="123"
-                                value={formData.cvc}
+                                type="email"
+                                name="email"
+                                placeholder="jane@example.com"
+                                value={formData.email}
                                 onChange={handleChange}
-                                className={`payment-input ${errors.cvc ? 'error-border' : ''}`}
+                                className={`payment-input ${errors.email ? 'error-border' : ''}`}
                             />
-                            {errors.cvc && <span className="payment-error-text">{errors.cvc}</span>}
+                            {errors.email && <span className="payment-error-text">{errors.email}</span>}
                         </div>
-                    </div>
 
-                    <button
-                        type="submit"
-                        disabled={isProcessing || totalAmount <= 0}
-                        className={`payment-button ${isProcessing ? 'processing' : ''}`}
-                    >
-                        {isProcessing ? 'Processing Payment...' : `Pay ${displayTotal}`}
-                    </button>
-                </form>
+                        {/* Card Number */}
+                        <div className="payment-form-group">
+                            <label className="payment-label">Card Number</label>
+                            <input
+                                type="text"
+                                name="cardNumber"
+                                placeholder="0000 0000 0000 0000"
+                                value={formData.cardNumber}
+                                onChange={handleChange}
+                                className={`payment-input ${errors.cardNumber ? 'error-border' : ''}`}
+                            />
+                            {errors.cardNumber && <span className="payment-error-text">{errors.cardNumber}</span>}
+                        </div>
+
+                        {/* Expiry and CVC Row */}
+                        <div className="payment-form-row">
+                            <div className="payment-form-group flex-1">
+                                <label className="payment-label">Expiration (MM/YY)</label>
+                                <input
+                                    type="text"
+                                    name="expiry"
+                                    placeholder="MM/YY"
+                                    value={formData.expiry}
+                                    onChange={handleChange}
+                                    className={`payment-input ${errors.expiry ? 'error-border' : ''}`}
+                                />
+                                {errors.expiry && <span className="payment-error-text">{errors.expiry}</span>}
+                            </div>
+
+                            <div className="payment-form-group flex-1 ml-10">
+                                <label className="payment-label">CVC / CVV</label>
+                                <input
+                                    type="password"
+                                    name="cvc"
+                                    placeholder="123"
+                                    value={formData.cvc}
+                                    onChange={handleChange}
+                                    className={`payment-input ${errors.cvc ? 'error-border' : ''}`}
+                                />
+                                {errors.cvc && <span className="payment-error-text">{errors.cvc}</span>}
+                            </div>
+                        </div>
+
+                        <button
+                            type="submit"
+                            disabled={isProcessing || totalAmount <= 0}
+                            className={`payment-button ${isProcessing ? 'processing' : ''}`}
+                        >
+                            {isProcessing ? 'Processing Payment...' : `Pay ${displayTotal}`}
+                        </button>
+                    </form>
+                )}
+
+                {paymentMethod === 'upi' && (
+                    <form onSubmit={handleSubmit} className="payment-form">
+                        <div className="upi-options" style={{ display: 'flex', gap: '15px', marginBottom: '20px' }}>
+                            <label style={{ cursor: 'pointer' }}>
+                                <input type="radio" name="upiMethod" value="qr" checked={upiMethod === 'qr'} onChange={() => setUpiMethod('qr')} />
+                                {' '}Generate QR Code
+                            </label>
+                            <label style={{ cursor: 'pointer' }}>
+                                <input type="radio" name="upiMethod" value="apps" checked={upiMethod === 'apps'} onChange={() => setUpiMethod('apps')} />
+                                {' '}PhonePe / Google Pay
+                            </label>
+                        </div>
+                        
+                        {upiMethod === 'qr' && (
+                            <div className="qr-container" style={{ textAlign: 'center', marginBottom: '30px', padding: '20px', background: '#fafafa', borderRadius: '8px' }}>
+                                <div style={{ width: '180px', height: '180px', background: '#ddd', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', border: '2px dashed #bbb' }}>
+                                    <span>[ QR Code ]</span>
+                                </div>
+                                <p style={{ marginTop: '15px', color: '#666' }}>Scan this QR code with any UPI app</p>
+                            </div>
+                        )}
+                        
+                        {upiMethod === 'apps' && (
+                            <div className="apps-container" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '30px' }}>
+                                <button 
+                                    type="button" 
+                                    className="payment-button" 
+                                    style={{ background: '#5f259f', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
+                                    onClick={() => setActiveUpiApp('phonepe')}
+                                >
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe" style={{ height: '24px', background: 'white', padding: '2px', borderRadius: '4px' }} />
+                                    Pay with PhonePe
+                                </button>
+                                <button 
+                                    type="button" 
+                                    className="payment-button" 
+                                    style={{ background: '#fff', color: '#3c4043', border: '1px solid #dadce0', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
+                                    onClick={() => setActiveUpiApp('gpay')}
+                                >
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" style={{ height: '24px' }} />
+                                    Pay with Google Pay
+                                </button>
+                            </div>
+                        )}
+
+                        {upiMethod !== 'apps' && (
+                            <button
+                                type="submit"
+                                disabled={isProcessing || totalAmount <= 0}
+                                className={`payment-button ${isProcessing ? 'processing' : ''}`}
+                            >
+                                {isProcessing ? 'Processing Payment...' : `Complete Payment of ${displayTotal}`}
+                            </button>
+                        )}
+                    </form>
+                )}
             </div>
         </div>
     );

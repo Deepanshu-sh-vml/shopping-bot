@@ -1,0 +1,137 @@
+/* DummyUpiPage.css */
+
+.dummy-upi-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    font-family: sans-serif;
+}
+
+.dummy-upi-page.gpay {
+    background-color: #ffffff;
+    color: #3c4043;
+}
+
+.dummy-upi-page.phonepe {
+    background-color: #5f259f;
+    color: #ffffff;
+}
+
+.dummy-upi-back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.dummy-upi-logo-container {
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.dummy-upi-logo-container.phonepe {
+    background: white;
+}
+
+.dummy-upi-logo-container.gpay {
+    background: transparent;
+}
+
+.dummy-upi-logo {
+    height: 40px;
+}
+
+.dummy-upi-subtitle {
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.dummy-upi-amount {
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.dummy-upi-pay-btn {
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dummy-upi-pay-btn.gpay {
+    background-color: #1a73e8;
+    color: #ffffff;
+}
+
+.dummy-upi-pay-btn.phonepe {
+    background-color: #ffffff;
+    color: #5f259f;
+}
+
+.dummy-upi-status-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dummy-upi-spinner {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.dummy-upi-spinner.gpay {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #1a73e8;
+}
+
+.dummy-upi-spinner.phonepe {
+    border: 4px solid #8a4bce;
+    border-top: 4px solid #ffffff;
+}
+
+.dummy-upi-processing-text {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.dummy-upi-success-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.dummy-upi-success-text.gpay {
+    color: #4caf50;
+}
+
+.dummy-upi-success-text.phonepe {
+    color: #ffffff;
+}
+
+@keyframes spin { 
+    0% { transform: rotate(0deg); } 
+    100% { transform: rotate(360deg); } 
+}

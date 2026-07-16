@@ -1,31 +1,51 @@
 /* PaymentPage.css */
 
 .payment-container {
-    position: fixed;
-    /* Takes over the entire window screen */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(243, 244, 246, 0.98);
-    /* Light clean overlay background */
-    z-index: 10000;
-    /* Floats above background */
-    padding: 20px;
+    flex-direction: column;
+    background-color: #ffffff;
     box-sizing: border-box;
     animation: fadeInModal 0.25s ease-out;
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.payment-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.payment-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #f1f1f1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.payment-back-btn {
+    background: none;
+    border: none;
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.15s ease;
+}
+
+.payment-back-btn:hover {
+    color: #111827;
 }
 
 .payment-card {
     background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 20px;
     width: 100%;
-    max-width: 450px;
     box-sizing: border-box;
 }
 

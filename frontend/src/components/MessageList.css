@@ -6,6 +6,12 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.message-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
 /* Welcome screen */

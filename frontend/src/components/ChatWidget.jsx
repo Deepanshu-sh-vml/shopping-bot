@@ -39,7 +39,10 @@ function ChatWidget({
       />
       {cartOpen && (
         <div className="cart-panel">
-          <div className="cart-panel-title">Cart</div>
+          <div className="cart-panel-header">
+            <div className="cart-panel-title">Cart</div>
+            <button className="cart-close-btn" onClick={() => setCartOpen(false)} title="Close Cart">&times;</button>
+          </div>
           {cart.length === 0 ? (
             <div className="cart-empty">No items added yet.</div>
           ) : (

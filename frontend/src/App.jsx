@@ -11,7 +11,10 @@ function App() {
   const [online, setOnline] = useState(false);                 // Backend status
   const [messages, setMessages] = useState([]);                // Chat log list
   const [loading, setLoading] = useState(false);               // Response loader state
-  const [conversationState, setConversationState] = useState(null);
+  const [conversationState, setConversationState] = useState(() => {
+    const saved = localStorage.getItem("shoppingBotSession");
+    return saved ? JSON.parse(saved) : null;
+  });
   const [cart, setCart] = useState([]);                        // Cart item list
 
   // Check health on mount
@@ -38,6 +41,7 @@ function App() {
       const result = await api.sendMessage(userMessage, conversationState);
       if (result.state) {
         setConversationState(result.state);
+        localStorage.setItem("shoppingBotSession", JSON.stringify(result.state));
       }
       setMessages((prev) => [
         ...prev,
@@ -129,7 +133,12 @@ function App() {
 
           {/* ---- 4. DYNAMIC PAGE CONTROLLER CHANGER ---- */}
           {currentPage === "payment" ? (
-            <PaymentPage onPaymentComplete={handlePaymentComplete} />
+            <div className="chat-widget" style={{ background: '#ffffff' }}>
+              <PaymentPage 
+                onPaymentComplete={handlePaymentComplete} 
+                onBack={() => setCurrentPage("chat")}
+              />
+            </div>
           ) : (
             <ChatWidget
               online={online}

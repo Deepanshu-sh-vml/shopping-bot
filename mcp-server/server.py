@@ -85,14 +85,16 @@ async def handle_call_tool(name: str, arguments: dict[str, Any] | None) -> list[
         
         # Checking matches
         category_match = (item_type in inv_category) or (inv_category in item_type)
-        color_match = color in inv_name
-        size_match = size in inv_sizes
+        color_match = (color in inv_name) if color else True
+        size_match = (size in inv_sizes) if size else True
 
         if category_match and color_match and size_match:
             matches.append(item)
 
     if not matches:
-        return [TextContent(type="text", text=f"Sorry, we don't have any size {size} {color} {item_type}s in stock.")]
+        spec_str = f"size {size} " if size else ""
+        spec_str += f"{color} " if color else ""
+        return [TextContent(type="text", text=f"Sorry, we don't have any {spec_str}{item_type}s in stock.")]
 
     result_text = "Found the following matching items in inventory:\n"
     for item in matches:
