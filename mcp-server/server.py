@@ -48,9 +48,10 @@ async def handle_list_tools() -> list[Tool]:
                 "properties": {
                     "item_type": {"type": "string", "description": "The type of clothing, e.g., 'shirt' or 'pants'."},
                     "size": {"type": "string", "description": "The size, e.g., 'M', 'S', 'L', 'medium', 'small'."},
-                    "color": {"type": "string", "description": "The color, e.g., 'blue', 'red', 'black'."}
+                    "color": {"type": "string", "description": "The color, e.g., 'blue', 'red', 'black'."},
+                    "gender": {"type": "string", "description": "The gender or target audience, e.g., 'men', 'women'."}
                 },
-                "required": ["item_type", "size", "color"]
+                "required": ["item_type", "size", "color", "gender"]
             }
         )
     ]
@@ -67,8 +68,9 @@ async def handle_call_tool(name: str, arguments: dict[str, Any] | None) -> list[
     item_type = str(arguments.get("item_type", "")).lower().strip()
     size = normalize_size(str(arguments.get("size", "")))
     color = str(arguments.get("color", "")).lower().strip()
+    gender = str(arguments.get("gender", "")).lower().strip()
 
-    print(f"[server.py] Search called with: type={item_type}, size={size}, color={color}", file=sys.stderr, flush=True)
+    print(f"[server.py] Search called with: type={item_type}, size={size}, color={color}, gender={gender}", file=sys.stderr, flush=True)
 
     inventory = load_inventory()
     matches = []
@@ -83,18 +85,22 @@ async def handle_call_tool(name: str, arguments: dict[str, Any] | None) -> list[
         # Match Size (checks if size is inside the sizes array)
         inv_sizes = [s.upper() for s in item.get("sizes", [])]
         
+        # Match Gender
+        inv_gender = str(item.get("gender", "")).lower()
+        
         # Checking matches
         category_match = (item_type in inv_category) or (inv_category in item_type)
         color_match = (color in inv_name) if color else True
         size_match = (size in inv_sizes) if size else True
+        gender_match = (gender in inv_gender) if gender else True
 
-        if category_match and color_match and size_match:
+        if category_match and color_match and size_match and gender_match:
             matches.append(item)
 
     if not matches:
         spec_str = f"size {size} " if size else ""
         spec_str += f"{color} " if color else ""
-        return [TextContent(type="text", text=f"Sorry, we don't have any {spec_str}{item_type}s in stock.")]
+        return [TextContent(type="text", text=f"Sorry, we don't have any {spec_str}{item_type}s for {gender} in stock.")]
 
     result_text = "Found the following matching items in inventory:\n"
     for item in matches:

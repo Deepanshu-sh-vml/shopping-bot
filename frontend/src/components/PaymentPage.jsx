@@ -15,7 +15,6 @@ const PaymentPage = ({ onPaymentComplete, onBack }) => {
     });
 
     const [paymentMethod, setPaymentMethod] = useState('card');
-    const [upiMethod, setUpiMethod] = useState('qr');
     const [activeUpiApp, setActiveUpiApp] = useState(null);
 
     const [errors, setErrors] = useState({});
@@ -144,11 +143,11 @@ const PaymentPage = ({ onPaymentComplete, onBack }) => {
 
     if (activeUpiApp) {
         return (
-            <DummyUpiPage 
-                appName={activeUpiApp} 
-                amount={displayTotal} 
-                onSuccess={handleUpiAppSuccess} 
-                onCancel={() => setActiveUpiApp(null)} 
+            <DummyUpiPage
+                appName={activeUpiApp}
+                amount={displayTotal}
+                onSuccess={handleUpiAppSuccess}
+                onCancel={() => setActiveUpiApp(null)}
             />
         );
     }
@@ -203,12 +202,12 @@ const PaymentPage = ({ onPaymentComplete, onBack }) => {
 
                 <h2 className="payment-title">Secure Checkout</h2>
 
-                <div className="payment-method-toggle" style={{ display: 'flex', gap: '15px', marginBottom: '20px', padding: '10px', background: '#f5f5f5', borderRadius: '8px' }}>
-                    <label style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                <div className="payment-method-toggle">
+                    <label className="payment-method-label">
                         <input type="radio" name="paymentMethod" value="card" checked={paymentMethod === 'card'} onChange={() => setPaymentMethod('card')} />
                         <strong>Credit / Debit Card</strong>
                     </label>
-                    <label style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                    <label className="payment-method-label">
                         <input type="radio" name="paymentMethod" value="upi" checked={paymentMethod === 'upi'} onChange={() => setPaymentMethod('upi')} />
                         <strong>UPI</strong>
                     </label>
@@ -301,58 +300,24 @@ const PaymentPage = ({ onPaymentComplete, onBack }) => {
 
                 {paymentMethod === 'upi' && (
                     <form onSubmit={handleSubmit} className="payment-form">
-                        <div className="upi-options" style={{ display: 'flex', gap: '15px', marginBottom: '20px' }}>
-                            <label style={{ cursor: 'pointer' }}>
-                                <input type="radio" name="upiMethod" value="qr" checked={upiMethod === 'qr'} onChange={() => setUpiMethod('qr')} />
-                                {' '}Generate QR Code
-                            </label>
-                            <label style={{ cursor: 'pointer' }}>
-                                <input type="radio" name="upiMethod" value="apps" checked={upiMethod === 'apps'} onChange={() => setUpiMethod('apps')} />
-                                {' '}PhonePe / Google Pay
-                            </label>
-                        </div>
-                        
-                        {upiMethod === 'qr' && (
-                            <div className="qr-container" style={{ textAlign: 'center', marginBottom: '30px', padding: '20px', background: '#fafafa', borderRadius: '8px' }}>
-                                <div style={{ width: '180px', height: '180px', background: '#ddd', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', border: '2px dashed #bbb' }}>
-                                    <span>[ QR Code ]</span>
-                                </div>
-                                <p style={{ marginTop: '15px', color: '#666' }}>Scan this QR code with any UPI app</p>
-                            </div>
-                        )}
-                        
-                        {upiMethod === 'apps' && (
-                            <div className="apps-container" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '30px' }}>
-                                <button 
-                                    type="button" 
-                                    className="payment-button" 
-                                    style={{ background: '#5f259f', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
-                                    onClick={() => setActiveUpiApp('phonepe')}
-                                >
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe" style={{ height: '24px', background: 'white', padding: '2px', borderRadius: '4px' }} />
-                                    Pay with PhonePe
-                                </button>
-                                <button 
-                                    type="button" 
-                                    className="payment-button" 
-                                    style={{ background: '#fff', color: '#3c4043', border: '1px solid #dadce0', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
-                                    onClick={() => setActiveUpiApp('gpay')}
-                                >
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" style={{ height: '24px' }} />
-                                    Pay with Google Pay
-                                </button>
-                            </div>
-                        )}
-
-                        {upiMethod !== 'apps' && (
+                        <div className="apps-container" style={{ marginTop: '10px' }}>
                             <button
-                                type="submit"
-                                disabled={isProcessing || totalAmount <= 0}
-                                className={`payment-button ${isProcessing ? 'processing' : ''}`}
+                                type="button"
+                                className="payment-button btn-upi-app btn-phonepe"
+                                onClick={() => setActiveUpiApp('phonepe')}
                             >
-                                {isProcessing ? 'Processing Payment...' : `Complete Payment of ${displayTotal}`}
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe" className="logo-phonepe" />
+                                Pay with PhonePe
                             </button>
-                        )}
+                            <button
+                                type="button"
+                                className="payment-button btn-upi-app btn-gpay"
+                                onClick={() => setActiveUpiApp('gpay')}
+                            >
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" className="logo-gpay" />
+                                Pay with Google Pay
+                            </button>
+                        </div>
                     </form>
                 )}
             </div>

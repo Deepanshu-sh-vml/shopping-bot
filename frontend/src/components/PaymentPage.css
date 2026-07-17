@@ -9,12 +9,15 @@
     box-sizing: border-box;
     animation: fadeInModal 0.25s ease-out;
     overflow-y: auto;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .payment-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
+    display: none;
+    /* Chrome, Safari and Opera */
 }
 
 .payment-header {
@@ -238,4 +241,92 @@
         opacity: 1;
         transform: scale(1);
     }
+}
+
+/* UPI specific styles */
+.payment-method-toggle {
+    display: flex;
+    gap: 65px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.payment-method-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.upi-options {
+    display: flex;
+    gap: 100px;
+    margin-bottom: 20px;
+}
+
+.upi-radio-label {
+    cursor: pointer;
+}
+
+.qr-container {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 8px;
+}
+
+.qr-placeholder {
+    width: 180px;
+    height: 180px;
+    background: #ddd;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 2px dashed #bbb;
+}
+
+.qr-text {
+    margin-top: 15px;
+    color: #666;
+}
+
+.apps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.btn-upi-app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-phonepe {
+    background: #5f259f !important;
+    color: white !important;
+}
+
+.btn-gpay {
+    background: #fff !important;
+    color: #3c4043 !important;
+    border: 1px solid #dadce0 !important;
+}
+
+.logo-phonepe {
+    height: 24px;
+    background: white;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.logo-gpay {
+    height: 24px;
 }
