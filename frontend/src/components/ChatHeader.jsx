@@ -1,12 +1,16 @@
 import "./ChatHeader.css";
+import fashionHubLogo from "../assets/fashion_hub_logo.png";
 
 function ChatHeader({ online, cartCount = 0, onCartClick, onClose }) {
   return (
     <div className="chat-header">
       <div className="header-left">
-        <div className="header-avatar">Shop</div>
+        <div className="header-avatar">
+          <img src={fashionHubLogo} alt="Fashion Hub Logo" className="header-avatar-logo" />
+        </div>
         <div>
-          <div className="header-title">Shopping Assistant</div>
+          <div className="header-title">Fashion Hub</div>
+          <div className="header-subtitle">Shopping Assistant</div>
         </div>
       </div>
 

@@ -15,14 +15,21 @@
 
 .header-avatar {
   width: 42px;
-  height: 38px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.25);
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.header-avatar-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .header-title {

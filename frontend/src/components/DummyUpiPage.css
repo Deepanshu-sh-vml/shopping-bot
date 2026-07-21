@@ -48,17 +48,40 @@
 }
 
 .dummy-upi-logo {
-    height: 40px;
+    height: 50px;
 }
 
 .dummy-upi-subtitle {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-weight: normal;
+    font-size: 18px;
 }
 
 .dummy-upi-amount {
     font-size: 48px;
     margin-bottom: 40px;
+}
+
+.dummy-upi-merchant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 2px;
+}
+
+.dummy-upi-merchant-name {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    height: 35px;
+}
+
+.dummy-upi-merchant-url {
+    font-size: 18px;
+    opacity: 0.65;
+    font-weight: 400;
+    height: 60px;
 }
 
 .dummy-upi-pay-btn {
@@ -69,7 +92,7 @@
     cursor: pointer;
     font-weight: bold;
     width: 250px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .dummy-upi-pay-btn.gpay {
@@ -131,7 +154,12 @@
     color: #ffffff;
 }
 
-@keyframes spin { 
-    0% { transform: rotate(0deg); } 
-    100% { transform: rotate(360deg); } 
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

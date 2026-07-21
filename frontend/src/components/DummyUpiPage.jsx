@@ -37,7 +37,11 @@ const DummyUpiPage = ({ appName, amount, onSuccess, onCancel }) => {
 
             {status === 'pending' && (
                 <>
-                    <h2 className="dummy-upi-subtitle">Paying Shopping Bot</h2>
+                    <h2 className="dummy-upi-subtitle">Paying to</h2>
+                    <div className="dummy-upi-merchant">
+                        <span className="dummy-upi-merchant-name">Fashion Hub</span>
+                        <span className="dummy-upi-merchant-url">fashionhub.com</span>
+                    </div>
                     <h1 className="dummy-upi-amount">{amount}</h1>
                     <button 
                         onClick={handlePay}
