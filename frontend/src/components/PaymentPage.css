@@ -75,10 +75,22 @@
 
 .payment-summary-row {
     display: flex;
+    align-items: baseline;
     justify-content: space-between;
+    gap: 8px;
     font-size: 13px;
     color: #4b5563;
     line-height: 1.4;
+}
+
+.payment-summary-row span {
+    flex: 1;
+}
+
+.payment-summary-row strong {
+    flex-shrink: 0;
+    white-space: nowrap;
+    text-align: right;
 }
 
 .payment-summary-divider {

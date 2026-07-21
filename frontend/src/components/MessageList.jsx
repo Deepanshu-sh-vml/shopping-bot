@@ -4,9 +4,9 @@ import "./MessageList.css";
 
 // Suggested starter tickets (shown when chat is empty)
 const STARTER_QUESTIONS = [
-  "Show me men's blue t-shirts in size M",
+  "Show me men's navy blue Tshirts in size L",
   "I'm looking for a women's red dress, size S",
-  "Do you have black sneakers for men in size 10?",
+  "Do you have black leather sneakers for men in size 10?",
   "Find me women's denim jackets in size L",
 ];
 

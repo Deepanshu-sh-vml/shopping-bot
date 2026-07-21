@@ -49,6 +49,7 @@ def find_products_in_text(text: str):
         return []
     
     lowered_text = text.lower()
+    print(lowered_text)
     products = []
     
     for item in load_inventory():
@@ -118,8 +119,8 @@ def find_inventory_item(item_id: int | None = None, item_name: str | None = None
 
 @app.get("/api/health")
 def health_check():
-    if not os.getenv("OPENROUTER_API_KEY"):
-        return {"status": "error", "message": "Missing OPENROUTER_API_KEY"}
+    if not os.getenv("GEMINI_API_KEY"):
+        return {"status": "error", "message": "Missing GEMINI_API_KEY"}
     return {"status": "200 ok"}
 
 def _event_text(event) -> str:
@@ -145,6 +146,11 @@ async def chat_with_agent(payload: ChatRequest):
                 user_id=USER_ID,
                 session_id=session_id,
             )
+
+        print("\n" + "🚀 [LLM INPUT DIAGNOSTIC]" + "="*40)
+        print(f"User Session ID: {session_id}")
+        print(f"Raw Input Text:  '{payload.message}'")
+        print("="*65 + "\n", flush=True)
 
         new_message = types.Content(
             role="user",

@@ -5,6 +5,7 @@ from mcp.server.stdio import stdio_server
 from mcp.server import Server
 from mcp.types import Tool, TextContent
 from typing import Any
+import re
 
 # Initialize the server
 app = Server("shopping-inventory")
@@ -24,6 +25,30 @@ def load_inventory():
             return data
     print("[server.py] ERROR: inventory.json NOT FOUND.", file=sys.stderr, flush=True)
     return []
+
+def normalize_item_type(raw: str) -> str:
+    """Lowercase, strip spaces/dashes, and singularize -> 'T-Shirts' becomes 'tshirt'."""
+    clean = str(raw).lower().strip().replace("-", "").replace(" ", "")
+    if clean.endswith("s") and clean not in ["pants", "jeans"]:
+        clean = clean[:-1]
+    return clean
+
+# Collapse compound / synonym colors to a single distinctive token
+COLOR_ALIASES = {
+    "navy blue": "navy",
+    "dark blue": "navy",
+    "sky blue": "sky",
+    "light blue": "blue",
+    "off white": "off-white",
+    "off-white": "off-white",
+    "olive green": "olive",
+    "red": "red",
+    # add more as your inventory grows (maroon, olive, teal, etc.)
+}
+
+def normalize_color(color_str: str) -> str:
+    clean = color_str.lower().strip()
+    return COLOR_ALIASES.get(clean, clean)
 
 # Dictionary helper to normalize and match standard size terms
 def normalize_size(size_str: str) -> str:
@@ -64,33 +89,42 @@ async def handle_call_tool(name: str, arguments: dict[str, Any] | None) -> list[
     if not arguments:
         raise ValueError("Missing arguments")
 
-    # Clean inputs
-    item_type = str(arguments.get("item_type", "")).lower().strip()
+    # ---- Clean / normalize inputs ----
+    item_type_clean = normalize_item_type(arguments.get("item_type", ""))
     size = normalize_size(str(arguments.get("size", "")))
-    color = str(arguments.get("color", "")).lower().strip()
+    color = normalize_color(str(arguments.get("color", "")))   # "navy blue" -> "navy"
     gender = str(arguments.get("gender", "")).lower().strip()
 
-    print(f"[server.py] Search called with: type={item_type}, size={size}, color={color}, gender={gender}", file=sys.stderr, flush=True)
+    print(f"\n📢 [MCP TOOL CALLED]", file=sys.stderr, flush=True)
+    print(f"  -> Generated item_type: '{item_type_clean}'", file=sys.stderr, flush=True)
+    print(f"  -> Generated size:      '{size}'", file=sys.stderr, flush=True)
+    print(f"  -> Generated color:     '{color}'", file=sys.stderr, flush=True)
+    print(f"  -> Generated gender:     '{gender}'", file=sys.stderr, flush=True)
 
     inventory = load_inventory()
     matches = []
-    
+
     for item in inventory:
-        # Match Category/Type (e.g. category "Tshirts" matching "tshirt")
-        inv_category = str(item.get("category", "")).lower().strip()
-        
-        # Match Color (checked against the product name or explicit metadata)
-        inv_name = str(item.get("productName", "")).lower()
-        
-        # Match Size (checks if size is inside the sizes array)
+        # Normalize the inventory category EXACTLY like the query
+        inv_category_clean = normalize_item_type(item.get("category", ""))
+
+        inv_name  = str(item.get("productName", "")).lower()
+        inv_color = str(item.get("color", "")).lower()
         inv_sizes = [s.upper() for s in item.get("sizes", [])]
-        
-        # Match Gender
         inv_gender = str(item.get("gender", "")).lower()
-        
-        # Checking matches
-        category_match = (item_type in inv_category) or (inv_category in item_type)
-        color_match = (color in inv_name) if color else True
+
+        color_haystack = f"{inv_name} {inv_color}"
+
+        # ---- Matching ----
+        # Category: EXACT match so "shirt" != "tshirt"
+        category_match = (item_type_clean == inv_category_clean)
+
+        # Color: whole-word match on the normalized token
+        if color:
+            color_match = re.search(rf"\b{re.escape(color)}\b", color_haystack) is not None
+        else:
+            color_match = True
+
         size_match = (size in inv_sizes) if size else True
         gender_match = (gender in inv_gender) if gender else True
 
@@ -100,13 +134,18 @@ async def handle_call_tool(name: str, arguments: dict[str, Any] | None) -> list[
     if not matches:
         spec_str = f"size {size} " if size else ""
         spec_str += f"{color} " if color else ""
-        return [TextContent(type="text", text=f"Sorry, we don't have any {spec_str}{item_type}s for {gender} in stock.")]
+        return [TextContent(
+            type="text",
+            text=f"Sorry, we don't have any {spec_str}{item_type_clean}s for {gender} in stock."
+        )]
 
     result_text = "Found the following matching items in inventory:\n"
     for item in matches:
-        result_text += f"- {item['productName']} by {item['brand']} - INR {item['price']} (MRP: {item['mrp']})\n"
+        result_text += (
+            f"- {item['productName']} by {item['brand']} "
+            f"- INR {item['price']} (MRP: {item['mrp']})\n"
+        )
     return [TextContent(type="text", text=result_text)]
-
 async def main():
     async with stdio_server() as (read_stream, write_stream):
         await app.run(read_stream, write_stream, app.create_initialization_options())
