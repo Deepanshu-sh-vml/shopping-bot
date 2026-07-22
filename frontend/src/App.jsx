@@ -58,7 +58,7 @@ function App() {
         {
           id: Date.now() + 1,
           role: "bot",
-          text: "⚠️ System offline. " + err.message,
+          text: "Sorry, System is unavailable right now. Please try again later.",
           isError: true,
         },
       ]);
@@ -134,8 +134,8 @@ function App() {
           {/* ---- 4. DYNAMIC PAGE CONTROLLER CHANGER ---- */}
           {currentPage === "payment" ? (
             <div className="chat-widget" style={{ background: '#ffffff' }}>
-              <PaymentPage 
-                onPaymentComplete={handlePaymentComplete} 
+              <PaymentPage
+                onPaymentComplete={handlePaymentComplete}
                 onBack={() => setCurrentPage("chat")}
               />
             </div>

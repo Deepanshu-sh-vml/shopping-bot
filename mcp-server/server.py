@@ -42,6 +42,7 @@ COLOR_ALIASES = {
     "off white": "off-white",
     "off-white": "off-white",
     "olive green": "olive",
+    "green": "green",
     "red": "red",
     # add more as your inventory grows (maroon, olive, teal, etc.)
 }

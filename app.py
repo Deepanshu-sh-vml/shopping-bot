@@ -1,7 +1,7 @@
 # app.py
 import json
 import os
-import re  # Added for regex cleaning
+import re 
 from uuid import uuid4
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -57,7 +57,7 @@ def find_products_in_text(text: str):
         brand = item["brand"].lower().strip()
         
         # Match if the bot mentions the product name or its brand in the text
-        if product_name in lowered_text or brand in lowered_text:
+        if product_name in lowered_text :
             # Format the output so our frontend doesn't break
             # We map nested values flatly to prevent frontend runtime crashes
             formatted_item = {
